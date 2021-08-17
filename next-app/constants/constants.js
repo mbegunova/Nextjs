@@ -1,0 +1,8 @@
+const settings = {
+    'colors': [
+
+    ],
+    'animations': [
+
+    ],
+}

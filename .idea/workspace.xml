@@ -10,18 +10,57 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df2e434b-0205-4ee8-85be-b32eb6b17dea" name="Default Changelist" comment="" />
+    <list default="true" id="df2e434b-0205-4ee8-85be-b32eb6b17dea" name="Default Changelist" comment="feat(project): добавлен проект с Next.js">
+      <change afterPath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/bonus/bonus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/bonus/bonus.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/brick/brick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/brick/brick.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/counter/counter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/counter/counter.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/element/element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/element/element.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/field/field.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/field/field.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/game/game.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/game/game.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/info/info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/info/info.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/main/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/main/main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/statistics/statistics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/statistics/statistics.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/constants/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/styles/components.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/pages/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1woDcg0qr6lyFcUAQB3F3dl5WJF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -29,7 +68,41 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/next-app/components/bonus" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\bonus" />
+      <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\brick" />
+      <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\element" />
+      <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\field" />
+      <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\GameWrapper" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/next-app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -41,8 +114,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629116128978</updated>
-      <workItem from="1629116130099" duration="728000" />
+      <workItem from="1629116130099" duration="2546000" />
+      <workItem from="1629127702149" duration="1944000" />
+      <workItem from="1629193554608" duration="6080000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(project): добавлен проект с Next.js">
+      <created>1629117110333</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1629117110333</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -58,15 +141,40 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(project): добавлен проект с Next.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(project): добавлен проект с Next.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="738" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1629116849952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="738" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1629116849952" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1629116877392">
+    <state width="1896" height="281" key="GridCell.Tab.0.bottom" timestamp="1629206396620">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629116877392" />
+    <state width="1896" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1629206396620" />
+    <state width="1896" height="281" key="GridCell.Tab.0.center" timestamp="1629206396620">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1896" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1629206396620" />
+    <state width="1896" height="281" key="GridCell.Tab.0.left" timestamp="1629206396620">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1896" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1629206396620" />
+    <state width="1896" height="281" key="GridCell.Tab.0.right" timestamp="1629206396620">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1896" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1629206396620" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1629117129055">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629117129055" />
+    <state x="240" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1629204780072">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="240" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1629204780072" />
   </component>
 </project>
