@@ -1,16 +1,17 @@
-import {Fragment} from "react";
-import Field from "./field/field.js";
+import {Fragment, useState} from "react";
+import Field from "../field/field.js";
+import Info from "../info/info.js";
 
 export default function Game(){
     const [isTutorial, setIsTutorial] = useState(true);
     return(
-        <Fragment>
-        <Field/>,
-            <div className="game__task">
-                <h2>Найдите указанное число</h2>
-                <i>{value}</i>
-            </div>,
-        <Field/>,
-        </Fragment>
-    );
+        <>
+        <Info isActive={isTutorial}/>
+        <div className="gme__task">
+            <h2 className="game__task-text">Найдите указанное число:</h2>
+            <i className="game__task-value">{value}</i>
+        </div>
+        <Field/>
+        </>
+    )
 }

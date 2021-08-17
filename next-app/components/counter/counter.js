@@ -9,7 +9,6 @@ export default function Counter() {
                     {count}
                 </h2>
             </div>
-
         </Fragment>
     )
 }

@@ -1,11 +1,11 @@
 import {Fragment} from "react";
 
 
-export default function Main() {
+export default function Element(props) {
     return(
-        <Fragment>
-        <Header/>,
-        <Content/>
-        </Fragment>
+        <div className="info__element element" key={props.key}>
+            <h4 className="element__text">{props.text}</h4>
+            <p className="element__value">{props.value}</p>
+        </div>
     )
 }

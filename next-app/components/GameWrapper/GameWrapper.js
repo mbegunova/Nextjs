@@ -4,6 +4,9 @@ import Main from "../main/main";
      const [state, setState] = useState("startpage");
 
      return(
-         <Main/>
+         <div className="game-wrapper">
+             <Main/>
+
+         </div>
     )
 }

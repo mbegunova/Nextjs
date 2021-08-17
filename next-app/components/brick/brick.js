@@ -1,7 +1,7 @@
 import {Fragment} from "react";
 
 
-export default function Main() {
+export default function Brick() {
     return(
         <Fragment>
         <Header/>,
