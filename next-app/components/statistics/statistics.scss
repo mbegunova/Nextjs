@@ -1,3 +1,46 @@
-.game{
+.main__statistics{
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  height: 300px;
+  width: 718px;
+}
 
+.statistics{
+  text-align: center;
+  border-collapse: separate;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  text-indent: 0px;
+  vertical-align: middle;
+  margin-top: 80px;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+  color: #3f3f3f;
+  background: #fff;
+  font-family: Open Sans,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+
+  &__list{
+    margin-left: 100px;
+    position: absolute;
+    width: 70%;
+    height: 152px;
+    padding: 50px;
+    display: table;
+  }
+
+  &__item-text{
+    padding-top: 20px;
+    font-size: 20px;
+    text-align: left;
+    width: 50%;
+  }
+
+  &__item-value{
+    padding-left: 50px;
+    font-size: 20px;
+    text-align: right;
+  }
 }

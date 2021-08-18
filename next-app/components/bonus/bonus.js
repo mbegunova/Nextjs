@@ -1,5 +1,3 @@
-import {Fragment} from "react";
-import Tutorial from "./tutorial/tutorial.js"
 
 
 export default function Bonus() {

@@ -1,4 +1,5 @@
 import {Fragment, useState} from "react";
+import Brick from "../brick/brick";
 
 
 export default function Field() {
@@ -25,8 +26,7 @@ export default function Field() {
     function colsBrick(count){
         for (let i in count){
             return(
-                <button className="field__brick brick">
-                </button>
+                <Brick/>
             )
         }
     }

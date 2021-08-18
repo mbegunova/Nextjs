@@ -10,27 +10,35 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df2e434b-0205-4ee8-85be-b32eb6b17dea" name="Default Changelist" comment="build(project): добавлена поддержка SCSS">
-      <change afterPath="$PROJECT_DIR$/next-app/constants/copyright.js" afterDir="false" />
+    <list default="true" id="df2e434b-0205-4ee8-85be-b32eb6b17dea" name="Default Changelist" comment="feat (project): добавлены компоненты в проект, реализаци компонентов">
+      <change afterPath="$PROJECT_DIR$/next-app/constants/elements.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/constants/statistics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/public/images/finger.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/public/images/gamefon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/public/images/right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next-app/public/images/wrong.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/bonus/bonus.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/bonus/bonus.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/brick/brick.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/brick/brick.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/components/brick/brick.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/brick/brick.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/counter/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/element/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/element/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/counter/counter.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/field/field.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/field/field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/components/field/field.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/field/field.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/game/game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/game/game.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/game/game.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/info/info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/components/info/info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/info/info.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/main/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/main/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/main/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/statistics/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/statistics/statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/components/statistics/statistics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/statistics/statistics.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/constants/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/constants/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/constants/copyright.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/constants/copyright.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/styles/components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/styles/components.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,23 +69,29 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/next-app/components/bonus" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/next-app/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\public" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\images" />
       <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\bonus" />
       <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\brick" />
       <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\element" />
       <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\field" />
-      <recent name="C:\Users\m.begunova\WebstormProjects\NumberGame\next-app\components\GameWrapper" />
     </key>
   </component>
   <component name="RunManager">
@@ -110,6 +124,8 @@
       <workItem from="1629116130099" duration="2546000" />
       <workItem from="1629127702149" duration="1944000" />
       <workItem from="1629193554608" duration="14876000" />
+      <workItem from="1629216363532" duration="91000" />
+      <workItem from="1629277269151" duration="21794000" />
     </task>
     <task id="LOCAL-00001" summary="feat(project): добавлен проект с Next.js">
       <created>1629117110333</created>
@@ -125,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629207533888</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat (project): добавлены компоненты в проект, реализаци компонентов">
+      <created>1629216440124</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1629216440124</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,9 +169,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat(project): добавлен проект с Next.js" />
     <MESSAGE value="build(project): добавлена поддержка SCSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="build(project): добавлена поддержка SCSS" />
+    <MESSAGE value="feat (project): добавлены компоненты в проект, реализаци компонентов" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat (project): добавлены компоненты в проект, реализаци компонентов" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="828" y="431" key="#ESLint" timestamp="1629290558324">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="828" y="431" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1629290558324" />
     <state x="171" y="202" key="#Inspections" timestamp="1629211244734">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -157,30 +185,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="738" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1629116849952" />
-    <state width="1899" height="57" key="GridCell.Tab.0.bottom" timestamp="1629216194826">
+    <state width="1899" height="189" key="GridCell.Tab.0.bottom" timestamp="1629299981357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="57" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1629216194826" />
-    <state width="1899" height="57" key="GridCell.Tab.0.center" timestamp="1629216194825">
+    <state width="1899" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1629299981357" />
+    <state width="1899" height="189" key="GridCell.Tab.0.center" timestamp="1629299981357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="57" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1629216194825" />
-    <state width="1899" height="57" key="GridCell.Tab.0.left" timestamp="1629216194825">
+    <state width="1899" height="189" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1629299981357" />
+    <state width="1899" height="189" key="GridCell.Tab.0.left" timestamp="1629299981357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="57" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1629216194825" />
-    <state width="1899" height="57" key="GridCell.Tab.0.right" timestamp="1629216194825">
+    <state width="1899" height="189" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1629299981357" />
+    <state width="1899" height="189" key="GridCell.Tab.0.right" timestamp="1629299981357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="57" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1629216194825" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1629207560129">
+    <state width="1899" height="189" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1629299981357" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1629216442601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629207560129" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629216442601" />
     <state x="563" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1629208192267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="563" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1629208192267" />
+    <state x="667" y="122" width="585" height="795" key="find.popup" timestamp="1629277377410">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="122" width="585" height="795" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1629277377410" />
     <state x="240" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1629210395581">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

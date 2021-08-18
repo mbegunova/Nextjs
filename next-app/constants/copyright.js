@@ -16,33 +16,3 @@ export const tutorial = {
     ]
 }
 
-export const statistics = [
-    {
-        text: "Текущий результат",
-        value: 0
-    },
-    {
-        text: "Верных ответов",
-        value: 0
-    },
-    {
-        text: "Точность овтетов",
-        value: 0
-    }
-]
-
-export const infoElements = [
-    {
-        text: "Время",
-        value: "00:00"
-    },
-    {
-        text: "Уровень",
-        value: "1-1"
-    },
-    {
-        text: "Очки",
-        value: "0"
-    }
-]
-

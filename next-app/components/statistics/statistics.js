@@ -1,23 +1,25 @@
 import {Fragment} from "react";
-import {statistics} from "../../constants/copyright";
+import {statistics} from "../../constants/statistics";
 
 
 export default function Statistics() {
     return(
     <div className="main__statistics statistics">
-        <ul className="statistics__list">
+        <table className="statistics__list">
+            <tbody>
             {statisticList()}
-        </ul>
+            </tbody>
+        </table>
     </div>
     )
 
     function statisticList(){
-        statistics.map(({text, value}, index) =>{
+        return statistics.items.map(({text, value}, index) =>{
             return(
-            <li className="statistics__item" key={index}>
-                <h4 className="statistics__item-text">{text}</h4>
-                <i className="statistics__item-value">{value}</i>
-            </li>
+            <tr className="statistics__item" key={index}>
+                <td className="statistics__item-text">{text}</td>
+                <td className="statistics__item-value">{value}</td>
+            </tr>
             )
         })
     }
