@@ -1,5 +1,48 @@
-.counter{
+.counter {
   position: absolute;
-  width: 632px;
-  height: 438px;
+  height: 533px;
+  width: 678px;
+  background-clip: border-box;
+  background: #4db8ec;
+  background-origin: padding-box;
+  background-size: auto;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  text-align: center;
+  vertical-align: middle;
+  padding: 170px 0 0 289px;
+  margin: 100px 0 0 400px;
+
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: none;
+    background-color: rgba(0, 0, 0, .6);
+  }
+
+
+  &__wrapper {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    display: block;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    width: 100px;
+    vertical-align: middle;
+  }
+
 }

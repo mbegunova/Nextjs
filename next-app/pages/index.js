@@ -4,13 +4,16 @@ import Tutorial from "../components/tutorial/tutorial";
 import {useState} from "react";
 import Counter from "../components/counter/counter";
 import Statistics from "../components/statistics/statistics";
+import {result} from "../constants/statistics";
+import {fromStatToResult} from "../utils/statHelper.js";
 
 export default function Home() {
     const [state, setState] = useState("statistics");
+    const GAME_WRAPPER = "game-wrapper";
     return (
         <>
             {currentComponent()}
-        </>
+            </>
     )
 
     function currentComponent() {
@@ -18,7 +21,7 @@ export default function Home() {
         switch (state) {
             case "tutorial": {
                 return (
-                    <Main className={"game-wrapper__main main"} onAction={() => {
+                    <Main className={`${GAME_WRAPPER}__main`} isTutorial={true} onAction={() => {
                         setState("counter")
                     }}>
                         <Tutorial/>
@@ -27,14 +30,14 @@ export default function Home() {
             }
             case "counter": {
                 return (
-                    <Counter onAction={() => {
+                    <Counter className={`${GAME_WRAPPER}__counter`} onAction={() => {
                         setState("game")
                     }}/>
                 )
             }
             case "game": {
                 return (
-                    <Game onAction={() => {
+                    <Game className={`${GAME_WRAPPER}__game`} onAction={() => {
                         setState("statistics")
                     }}>
                     </Game>
@@ -42,10 +45,10 @@ export default function Home() {
             }
             case "statistics": {
                 return (
-                    <Main className={"game-wrapper__main main"} onAction={() => {
+                    <Main className={`${GAME_WRAPPER}__main ${GAME_WRAPPER}__main_result main`} isTutorial={false} onAction={() => {
                         setState("tutorial")
                     }} modifier={"result"}>
-                        <Statistics/>
+                        <Statistics statList={fromStatToResult(result)}/>
                     </Main>
                 )
             }

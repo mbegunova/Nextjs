@@ -1,9 +1,46 @@
 .info{
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  display: flex;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 32px;
+  justify-content: space-between;
+  padding: 0px 16px;
+  position: absolute;
+  right: 0px;
+  text-align: center;
+  top: 0px;
+  user-select: none;
+  width: 445px;
 
   &__element{
-
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: block;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 24px;
+    text-align: center;
+    user-select: none;
+    width: 45px;
   }
   &__bonus{
-
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    display: block;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 24px;
+    text-align: center;
+    user-select: none;
+    width: 65px;
   }
+
+
 }

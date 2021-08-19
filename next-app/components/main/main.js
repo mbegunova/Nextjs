@@ -1,19 +1,18 @@
 import {Fragment, useState} from "react";
-import Tutorial from "../tutorial/tutorial.js";
-import Statistics from "../statistics/statistics.js";
 import {titles} from "../../constants/constants.js";
 
 
-export default function Main({className, children, modifier, onAction}) {
-    const [isTutorial, setIsTutorial] = useState(true);
+export default function Main({className, children, modifier, onAction, isTutorial}) {
+    const {title: titleContent, subtitle: subtitleContent} = titles[isTutorial ? "tutorial" : "statistics"][0];
+    const title = titleContent ? (<h3 className="main__popup-title">{titleContent}</h3>) : null;
+    const subtitle = subtitleContent ? (<p className="main__popup-subtitle">{subtitleContent}</p>) : null;
+
     return (
         <div className={`main ${className ?? ""} ${modifier ? `main_${modifier}` : ""}`}>
             <div className="main__popup">
                 <div className="main__popup-container">
-                        isTutorial
-                         ? <> <h2 className="main__popup-title">{titles.tutorial.title}</h2>
-                            <h3 className="main__popup-subtitle">{titles.tutorial.subtitle}</h3></>
-                        :<h2 className="main__popup-title">{titles.statistics.title}</h2>
+                    {title}
+                    {subtitle}
                 </div>
             </div>
             {children}

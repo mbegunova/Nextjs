@@ -1,9 +1,9 @@
-import {Fragment, useState} from "react";
+import {useState} from "react";
 import Field from "../field/field.js";
 import Info from "../info/info.js";
 
 export default function Game(){
-    const [isTutorial, setIsTutorial] = useState(true);
+    const [isTutorial, setIsTutorial] = useState(false);
     return(
         <>
         <Info isActive={isTutorial}/>

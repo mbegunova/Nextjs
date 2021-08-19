@@ -1,39 +1,89 @@
-.main__tutorial{
-  text-align: center;
-}
 
 .tutorial{
   text-align: center;
+  align-items: normal;
+  box-sizing: border-box;
+  color: rgb(63, 63, 63);
+  flex-direction: column;
+  font-family: Montserrat, "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 274px;
+  padding: 50px;
+  width: 628px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
 
   &__list{
-    align-items: center;
     box-sizing: border-box;
     color: rgb(63, 63, 63);
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    height: 198px;
+    text-align: left;
+    width: 522.797px;
+
+  }
+
+  &__item{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     font-family: Montserrat, "Open Sans", sans-serif;
-    font-size: 16px;
+    font-size: 14.08px;
     font-weight: 400;
-    height: 295px;
-    padding-left: 20px;
-    padding-right: 20px;
+    height: 46px;
+    justify-content: flex-start;
+    line-height: 28.16px;
+    list-style-type: none;
+    margin-bottom: 20px;
     text-align: left;
-    width: 544.5px;
-    margin: 0 0 20px 80px;
-  }
+    width: 522.797px;
 
-  &__list-item{
+  }
+  &__item-title{
+    position: relative;
     box-sizing: border-box;
     color: rgb(51, 51, 51);
     display: block;
-    font-family: Montserrat, "Open Sans", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
-    height: 40px;
-    line-height: 20px;
     list-style-type: none;
     text-align: left;
-    width: 220px;
-    -webkit-box-direction: normal;
+    align-items: flex-start;
+    font-family: Montserrat, "Open Sans", sans-serif;
+    height: 26px;
+    line-height: 28.16px;
+    width: 522.797px;
+  }
+
+  &__item-subtitle{
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 4px;
+    color: #393535;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+    width: 522.797px;
+  }
+
+  &__title{
+    box-sizing: border-box;
+    color: rgb(143, 74, 249);
+    display: block;
+    font-size: 21px;
+    font-weight: 900;
+    height: 26px;
+    line-height: 26px;
+    margin: 0 0 30px;
+    text-align: center;
+    width: 509px;
   }
 }

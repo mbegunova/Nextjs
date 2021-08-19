@@ -3,7 +3,7 @@ import {Fragment} from "react";
 
 export default function Element(props) {
     return(
-        <div className="info__element element" key={props.key}>
+        <div className="info__element element">
             <h4 className="element__text">{props.text}</h4>
             <p className="element__value">{props.value}</p>
         </div>
