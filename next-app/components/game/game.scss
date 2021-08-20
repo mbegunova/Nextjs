@@ -1,16 +1,14 @@
 
-.game{
+.game {
   display: flex;
+  flex-direction: column;
   height: 583px;
   width: 678px;
   font-size: 16px;
-  margin: 100px 0 0 400px;
-
+  position: absolute;
   background-clip: border-box;
   background: rgb(77, 184, 236) none scroll;
   background-origin: padding-box;
-  background-position-x: 0%;
-  background-position-y: 0%;
   background-size: auto;
   box-sizing: border-box;
   color: rgb(63, 63, 63);
@@ -18,27 +16,44 @@
   font-weight: 400;
   text-align: center;
   user-select: none;
+  justify-content: center;
 
-  &__task{
+  &__info {
+    position: absolute;
+    max-width: 445px;
+    min-width: 288px;
+    padding: 0 16px;
+    right: 0;
+    text-align: center;
+    top: 0;
+  }
+
+  &__task {
     align-items: center;
     border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 35px 0px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 7px 35px 0;
     box-sizing: border-box;
     color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     font-size: 16px;
     font-weight: 400;
     height: 102px;
     justify-content: space-between;
-    margin-bottom: 20px;
-    margin-top: 50px;
     padding: 24px 19.2px;
-    position :relative;
-    text-align :center;
-    user-select :none;
+    position: absolute;
+    text-align: center;
+    user-select: none;
     width: 606px;
+    margin: 70px 0 100px 40px;
+  }
+  &__task-text{
+    text-align: left;
+  }
+  &__task-value{
+    text-align: right;
+  }
 
+  &__field{
+    margin: 400px 0 100px 40px;
+    position: absolute;
   }
 }

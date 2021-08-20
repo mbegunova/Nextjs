@@ -10,28 +10,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df2e434b-0205-4ee8-85be-b32eb6b17dea" name="Default Changelist" comment="feat,style(main, statistics, tutorial): добавлен функционал состояний внутри компонентов. оформлен стиль компонентов">
-      <change afterPath="$PROJECT_DIR$/next-app/utils/statHelper.js" afterDir="false" />
+    <list default="true" id="df2e434b-0205-4ee8-85be-b32eb6b17dea" name="Default Changelist" comment="feat,style(counter, main): реализован класс обратного отсчета. оформлена стилизация в сounter и main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/GameWrapper/GameWrapper.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/brick/brick.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/brick/brick.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/counter/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/counter/counter.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/element/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/element/element.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/field/field.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/field/field.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/components/field/field.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/field/field.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/game/game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/game/game.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/game/game.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/info/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/info/info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/info/info.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/main/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/main/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/main/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/statistics/statistics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/statistics/statistics.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/components/statistics/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/statistics/statistics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/tutorial/tutorial.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/constants/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/constants/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/constants/elements.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/constants/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/constants/statistics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/utils/statHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/utils/statHelper.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +112,8 @@
       <workItem from="1629193554608" duration="14876000" />
       <workItem from="1629216363532" duration="91000" />
       <workItem from="1629277269151" duration="22571000" />
-      <workItem from="1629363453284" duration="21143000" />
+      <workItem from="1629363453284" duration="21872000" />
+      <workItem from="1629451154373" duration="14881000" />
     </task>
     <task id="LOCAL-00001" summary="feat(project): добавлен проект с Next.js">
       <created>1629117110333</created>
@@ -149,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629302806369</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat,style(counter, main): реализован класс обратного отсчета. оформлена стилизация в сounter и main">
+      <created>1629388282284</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1629388282284</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +173,8 @@
     <MESSAGE value="build(project): добавлена поддержка SCSS" />
     <MESSAGE value="feat (project): добавлены компоненты в проект, реализаци компонентов" />
     <MESSAGE value="feat,style(main, statistics, tutorial): добавлен функционал состояний внутри компонентов. оформлен стиль компонентов" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat,style(main, statistics, tutorial): добавлен функционал состояний внутри компонентов. оформлен стиль компонентов" />
+    <MESSAGE value="feat,style(counter, main): реализован класс обратного отсчета. оформлена стилизация в сounter и main" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat,style(counter, main): реализован класс обратного отсчета. оформлена стилизация в сounter и main" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="431" key="#ESLint" timestamp="1629290558324">
@@ -191,30 +193,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1629369511525" />
-    <state width="1899" height="189" key="GridCell.Tab.0.bottom" timestamp="1629369511736">
+    <state width="1899" height="117" key="GridCell.Tab.0.bottom" timestamp="1629468741434">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="189" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1629369511736" />
-    <state width="1899" height="189" key="GridCell.Tab.0.center" timestamp="1629369511736">
+    <state width="1899" height="117" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1629468741434" />
+    <state width="1899" height="117" key="GridCell.Tab.0.center" timestamp="1629468741433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="189" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1629369511736" />
-    <state width="1899" height="189" key="GridCell.Tab.0.left" timestamp="1629369511736">
+    <state width="1899" height="117" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1629468741433" />
+    <state width="1899" height="117" key="GridCell.Tab.0.left" timestamp="1629468741433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="189" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1629369511736" />
-    <state width="1899" height="189" key="GridCell.Tab.0.right" timestamp="1629369511736">
+    <state width="1899" height="117" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1629468741433" />
+    <state width="1899" height="117" key="GridCell.Tab.0.right" timestamp="1629468741433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="189" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1629369511736" />
+    <state width="1899" height="117" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1629468741433" />
     <state x="560" y="433" key="VCS.ChangelistChooser" timestamp="1629366326958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="560" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1629366326958" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1629303331222">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1629388291128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629303331222" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629388291128" />
     <state x="563" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1629208192267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -223,9 +225,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="122" width="585" height="795" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1629277377410" />
-    <state x="240" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1629365681207">
+    <state x="240" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1629460606441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="240" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1629365681207" />
+    <state x="240" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1629460606441" />
   </component>
 </project>

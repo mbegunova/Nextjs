@@ -10,13 +10,22 @@ import {fromStatToResult} from "../utils/statHelper.js";
 export default function Home() {
     const [state, setState] = useState("statistics");
     const GAME_WRAPPER = "game-wrapper";
+    const [time, setTime] = useState(14);
+    const [isReset, setIsReset] = useState(false);
+
     return (
-        <>
-            {currentComponent()}
-            </>
+        <div className={GAME_WRAPPER}>
+            {CurrentComponent()}
+            <button onClick={() => setIsReset(true)}
+                    style={{zIndex: 1000, position: "absolute", background: "red"}}>RESET
+            </button>
+            <button onClick={() => setTime(20)}
+                    style={{zIndex: 1000, 'margin-left':'100px', position: "absolute", background: "blue"}}>SETTIME
+            </button>
+        </div>
     )
 
-    function currentComponent() {
+    function CurrentComponent() {
 
         switch (state) {
             case "tutorial": {
@@ -24,13 +33,16 @@ export default function Home() {
                     <Main className={`${GAME_WRAPPER}__main`} isTutorial={true} onAction={() => {
                         setState("counter")
                     }}>
-                        <Tutorial/>
+                        <Tutorial className={`${GAME_WRAPPER}__tutorial`}/>
                     </Main>
                 )
             }
             case "counter": {
                 return (
-                    <Counter className={`${GAME_WRAPPER}__counter`} onAction={() => {
+                    <Counter className={`${GAME_WRAPPER}__counter`} value={time}
+                             afterReset={() => {
+                                 setIsReset(!isReset)
+                             }} isReset={isReset} onAction={() => {
                         setState("game")
                     }}/>
                 )
@@ -45,13 +57,18 @@ export default function Home() {
             }
             case "statistics": {
                 return (
-                    <Main className={`${GAME_WRAPPER}__main ${GAME_WRAPPER}__main_result main`} isTutorial={false} onAction={() => {
-                        setState("tutorial")
-                    }} modifier={"result"}>
-                        <Statistics statList={fromStatToResult(result)}/>
+                    <Main className={`${GAME_WRAPPER}__main ${GAME_WRAPPER}__main_result main`} isTutorial={false}
+                          onAction={() => {
+                              setState("tutorial")
+                          }} modifier={"result"}>
+                        <Statistics className={`${GAME_WRAPPER}__statistics`} statList={fromStatToResult(result)}/>
                     </Main>
                 )
             }
         }
     }
+}
+
+function afterReset(isReset) {
+    return !isReset;
 }

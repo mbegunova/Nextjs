@@ -2,37 +2,33 @@ import {Fragment, useState} from "react";
 import Brick from "../brick/brick";
 
 
-export default function Field() {
+export default function Field({className}) {
     const [col, setCol] = useState(3);
     const [row, setRow] = useState(2);
     const [difficult, setDifficult] = useState(1);
-    let rowsArray = [row];
-    let colsArray = [col];
 
 
     return (
-        <div className={"field"}>
-            {rowsBrick()}
+        <div className={`${className} field`}>
+            {RowsBrick()}
         </div>
     )
 
-    function rowsBrick() {
-        debugger
-        return rowsArray.map((el, index) => {
-            return (
-                <div key={index}> {
-                    colsBrick()
-                } </div>)
-        })
+    function RowsBrick() {
+        const arr = [];
+        let value = row;
+        while (value--)
+            arr.push((<div key={value}> {
+                ColsBrick()
+            } </div>));
+        return arr;
     }
 
-    function colsBrick(value) {
-     /*   const arr = [];
+    function ColsBrick() {
+        let value = col;
+        const arr = [];
         while (value--)
-            arr.push((<button key={value}></button>));*/
-        return colsArray.map((el, index) => {
-            return (<button key={index}></button>)
-        })
+            arr.push(<Brick/>);
         return arr;
     }
 }

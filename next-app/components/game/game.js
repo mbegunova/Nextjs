@@ -5,13 +5,13 @@ import Info from "../info/info.js";
 export default function Game(){
     const [isTutorial, setIsTutorial] = useState(false);
     return(
-        <>
+        <div className={"game"}>
         <Info isActive={isTutorial}/>
-        <div className="gme__task">
+        <div className="game__task">
             <h2 className="game__task-text">Найдите указанное число:</h2>
             <i className="game__task-value"></i>
         </div>
-        <Field/>
-        </>
+        <Field className={"game__field"}/>
+        </div>
     )
 }

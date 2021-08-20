@@ -1,22 +1,18 @@
 //utils/ statHelper.js
+import {stat} from "../constants/statistics";
 
 export function fromStatToResult(statList) {
-
-    return Object.entries(statList).map(([key,value])=>{
-        let text;
+    return Object.entries(statList).map(([key, value]) => {
         switch (key) {
-            case "totalPoints":
-                text = `${value}`
-                break;
             case "rightAnswers":
-                text = `${value.right} из ${value.all}`
+                value = `${value.right} из ${value.all}`
                 break;
             case "accuracyAnswers":
-                text= `${value}%`
+                value = `${value * 100}%`
+                break;
         }
         return [
-            {text: text, value: value}
+            {text: stat[key], value}
         ]
     })
-
 }

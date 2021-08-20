@@ -15,7 +15,7 @@ export const statistics = {
     ]
 }
 
-const stat = {
+export const stat = {
     totalPoints: "Текущий результат",
     rightAnswers: "Верных ответов",
     accuracyAnswers: "Точность овтетов",
@@ -26,7 +26,7 @@ export const result = {
     totalPoints: 0,
     rightAnswers: {
         right: 2,
-        all:3,
+        all: 3,
     },
     accuracyAnswers: 0.5
 }
