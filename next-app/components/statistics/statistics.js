@@ -1,13 +1,11 @@
-import {Fragment} from "react";
-import {statistics} from "../../constants/statistics";
+import {fromStatToResult} from "../../utils/statHelper";
 
-
-export default function Statistics({statList}) {
+export default function Statistics({statList, resultObj}) {
     return (
         <div className="main__statistics statistics">
             <table className="statistics__list">
                 <tbody>
-                {StatisticList(statList)}
+                {StatisticList(statList, resultObj)}
                 </tbody>
             </table>
         </div>
@@ -16,12 +14,13 @@ export default function Statistics({statList}) {
 
 }
 
-function StatisticList(statList) {
-    return statList.map(({text, value}, index) => {
+function StatisticList(statList, resultObj) {
+    return Object.entries(fromStatToResult(resultObj)).map(([key, object], index) => {
+        const objectResult =  object[0].value[0];
         return (
             <tr className="statistics__item" key={index}>
-                <td className="statistics__item-text">{text}</td>
-                <td className="statistics__item-value">{value}</td>
+                <td className="statistics__item-text">{objectResult.text}</td>
+                <td className="statistics__item-value">{objectResult.value}</td>
             </tr>
         )
     })

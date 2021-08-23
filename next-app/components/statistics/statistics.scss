@@ -1,4 +1,4 @@
-.statistics{
+.statistics {
   position: relative;
   text-align: center;
   vertical-align: middle;
@@ -12,9 +12,9 @@
   border-color: grey;
   color: #3f3f3f;
   background: #fff;
-  font-family: Open Sans,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  font-family: Open Sans, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
 
-  &__list{
+  &__list {
     margin-left: 150px;
     position: absolute;
     width: 70%;
@@ -31,7 +31,7 @@
     text-indent: 0px;
   }
 
-  &__item-text{
+  &__item-text {
     font-size: 18px;
     text-align: left;
     color: rgb(153, 153, 153);
@@ -42,7 +42,7 @@
 
   }
 
-  &__item-value{
+  &__item-value {
     padding-left: 50px;
     color: rgb(63, 63, 63);
     display: table-cell;
@@ -55,7 +55,7 @@
   }
 
 
-  __item{
+  __item {
     position: absolute;
     border-color: rgb(128, 128, 128);
     box-sizing: border-box;

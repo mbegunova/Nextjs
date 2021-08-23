@@ -1,6 +1,8 @@
 import {useEffect, useReducer, useState} from "react";
+import PropTypes from 'prop-types'; // ES6
 
-export default function Counter({className, onAction, value, isReset, afterReset}) {
+
+export default function Counter({className="", onAction, value, isReset, afterReset}) {
     const [count, setCount] = useState(value ?? 3);
     const [timerId, setTimerId] = useState(null);
 
@@ -11,12 +13,10 @@ export default function Counter({className, onAction, value, isReset, afterReset
 
     useEffect(() => {
         updateTimer(timerId, setTimerId, value, setCount);
-        console.log("Изменился isReset");
         if (isReset && typeof afterReset === "function") afterReset();
     }, [isReset])
 
     useEffect(() => {
-        console.log("Изменился count");
         if (!count) {
             clearInterval(timerId);
             onAction();
@@ -43,3 +43,10 @@ function updateTimer(timerId, setTimerId, value, setCount) {
 
 }
 
+Counter.propTypes = {
+    className: PropTypes.string,
+    onAction: PropTypes.function,
+    afterReset: PropTypes.function,
+    value: PropTypes.number,
+    isReset: PropTypes.boolean,
+};

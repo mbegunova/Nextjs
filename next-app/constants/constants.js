@@ -1,20 +1,28 @@
 export const settings = {
-    'colors': [
-
+    colors: [
+        '#f28f34',
+        '#fc74b2',
+        '#4cb9ed',
+        '#8f3acc',
+        '#95ca4c',
     ],
-    'animations': [
-
+    animations: [
+        'rotate-animation',
+        'opacity-animation',
+        'pulse-animation',
     ],
 }
 
-export const titles={
-    tutorial:[
+
+
+export const titles = {
+    tutorial: [
         {
             title: "Найди число",
             subtitle: "Тренажер на внимание"
         }
     ],
-    statistics:[
+    statistics: [
         {
             title: "Ваши результаты",
         }
@@ -24,15 +32,15 @@ export const titles={
 export const infoElements = {
     items: [
         {
-            text: "Время",
+            text: "ВРЕМЯ",
             value: "00:00"
         },
         {
-            text: "Уровень",
+            text: "УРОВЕНЬ",
             value: "1-1"
         },
         {
-            text: "Очки",
+            text: "ОЧКИ",
             value: "0"
         }
     ]
