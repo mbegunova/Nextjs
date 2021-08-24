@@ -10,25 +10,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df2e434b-0205-4ee8-85be-b32eb6b17dea" name="Default Changelist" comment="feat(counter): долбавлена возможность сброса таймера, установки времени в него">
-      <change afterPath="$PROJECT_DIR$/next-app/constants/levels.js" afterDir="false" />
+    <list default="true" id="df2e434b-0205-4ee8-85be-b32eb6b17dea" name="Default Changelist" comment="feat, style(brick): реализован функционал и добавлены стилизация: цвет, анимация">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/bonus/bonus.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/bonus/bonus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/bonus/bonus.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/bonus/bonus.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/brick/brick.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/brick/brick.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/brick/brick.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/brick/brick.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/counter/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/counter/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/counter/counter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/counter/counter.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/element/element.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/element/element.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/field/field.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/field/field.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/field/field.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/field/field.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/components/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/game/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/game/game.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/game/game.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/info/info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/info/info.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/main/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/main/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/statistics/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/statistics/statistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-app/components/statistics/statistics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/statistics/statistics.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/components/info/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/components/info/info.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/constants/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/constants/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-app/constants/levels.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/constants/levels.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next-app/utils/statHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/next-app/utils/statHelper.js" afterDir="false" />
     </list>
@@ -121,6 +112,8 @@
       <workItem from="1629363453284" duration="21872000" />
       <workItem from="1629451154373" duration="19270000" />
       <workItem from="1629709415625" duration="23307000" />
+      <workItem from="1629734583583" duration="159000" />
+      <workItem from="1629795692306" duration="21469000" />
     </task>
     <task id="LOCAL-00001" summary="feat(project): добавлен проект с Next.js">
       <created>1629117110333</created>
@@ -164,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629471203503</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat, style(brick): реализован функционал и добавлены стилизация: цвет, анимация">
+      <created>1629734730520</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1629734730520</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,7 +189,8 @@
     <MESSAGE value="feat,style(main, statistics, tutorial): добавлен функционал состояний внутри компонентов. оформлен стиль компонентов" />
     <MESSAGE value="feat,style(counter, main): реализован класс обратного отсчета. оформлена стилизация в сounter и main" />
     <MESSAGE value="feat(counter): долбавлена возможность сброса таймера, установки времени в него" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(counter): долбавлена возможность сброса таймера, установки времени в него" />
+    <MESSAGE value="feat, style(brick): реализован функционал и добавлены стилизация: цвет, анимация" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat, style(brick): реализован функционал и добавлены стилизация: цвет, анимация" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="431" key="#ESLint" timestamp="1629290558324">
@@ -208,30 +209,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1629369511525" />
-    <state width="1899" height="120" key="GridCell.Tab.0.bottom" timestamp="1629734557589">
+    <state width="1899" height="120" key="GridCell.Tab.0.bottom" timestamp="1629818054917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="120" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1629734557589" />
-    <state width="1899" height="120" key="GridCell.Tab.0.center" timestamp="1629734557589">
+    <state width="1899" height="120" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1629818054917" />
+    <state width="1899" height="120" key="GridCell.Tab.0.center" timestamp="1629818054917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="120" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1629734557589" />
-    <state width="1899" height="120" key="GridCell.Tab.0.left" timestamp="1629734557588">
+    <state width="1899" height="120" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1629818054917" />
+    <state width="1899" height="120" key="GridCell.Tab.0.left" timestamp="1629818054917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="120" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1629734557588" />
-    <state width="1899" height="120" key="GridCell.Tab.0.right" timestamp="1629734557589">
+    <state width="1899" height="120" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1629818054917" />
+    <state width="1899" height="120" key="GridCell.Tab.0.right" timestamp="1629818054917">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="120" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1629734557589" />
+    <state width="1899" height="120" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1629818054917" />
     <state x="560" y="433" key="VCS.ChangelistChooser" timestamp="1629366326958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="560" y="433" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1629366326958" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1629471211340">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1629734736262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629471211340" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1629734736262" />
     <state x="563" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1629208192267">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

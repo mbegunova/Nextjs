@@ -33,7 +33,7 @@ export default function Home() {
             case "tutorial": {
                 return (
                     <Main className={`${GAME_WRAPPER}__main`} isTutorial={true} onAction={() => {
-                        setState("game-tutorial")
+                        setState("game-tutorial");
                     }}>
                         <Tutorial className={`${GAME_WRAPPER}__tutorial`}/>
                     </Main>
@@ -41,7 +41,8 @@ export default function Home() {
             }
             case "game-tutorial": {
                 return (
-                    <Game className={`${GAME_WRAPPER}__game`} modifier={"tutorial"} onAction={() => {
+
+                    <Game className={`${GAME_WRAPPER}__game`} modifier={"tutorial"}  onAction={() => {
                         setState("counter")
                     }}>
                     </Game>
@@ -59,7 +60,7 @@ export default function Home() {
             }
             case "game": {
                 return (
-                    <Game className={`${GAME_WRAPPER}__game`} onAction={() => {
+                    <Game className={`${GAME_WRAPPER}__game`}  onAction={() => {
                         setState("statistics")
                     }}>
                     </Game>

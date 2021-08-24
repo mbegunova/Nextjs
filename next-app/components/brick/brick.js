@@ -1,8 +1,8 @@
-export default function Brick({className = "", number, onAction, isFingered = false, color, animationModifier}) {
+export default function Brick({className = "", number, onAction, color, isFingered = false, animationModifier, sizeModifier}) {
 
     return (
-
-        <button className={`brick ${className}  ${animationModifier ? `brick_${animationModifier}` : ""}`}
+        <button className={`brick ${className}  ${animationModifier ? `brick_${animationModifier}` : ""}
+        ${sizeModifier ? `brick_${sizeModifier}` : ""}`}
                 onClick={() => {
                     if (typeof onAction === "function") onAction(number);
                 }}
@@ -16,10 +16,6 @@ export default function Brick({className = "", number, onAction, isFingered = fa
 }
 
 function Finger() {
-    return <img onClick={() => {
-        return false;
-    }} className={"brick__finger"} alt={"Указатель на ответ"} src={"/images/finger.svg"} width={96} height={103}/>
+    return <img className={"brick__finger"} alt={"Указатель на ответ"} src={"/images/finger.svg"} width={96}
+                height={103}/>
 }
-//Клики запретить
-// display: block
-// убрать лишние стили
