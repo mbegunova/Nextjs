@@ -1,6 +1,6 @@
-//utils/ statHelper.js
 import {stat} from "../constants/statistics";
-import {settings} from "../constants/constants";
+import {levels} from "../constants/levels";
+import {rng} from "./rng";
 
 export function fromStatToResult(statList) {
     // преобразут список статистики к шаблонные строки
@@ -19,40 +19,39 @@ export function fromStatToResult(statList) {
     })
 }
 
-export function randomInteger(min, max) {
-    // получить случайное число от (min-0.5) до (max+0.5)
-    const rng = new RNG(17);
-    return rng.nextRange(min, max);
-}
-
-
-
-function RNG(seed) {
-    // LCG using GCC's constants
-    this.m = 0x80000000; // 2**31;
-    this.a = 1103515245;
-    this.c = 12345;
-
-    this.state = seed ? seed : Math.floor(Math.random() * (this.m - 1));
-}
-RNG.prototype.nextInt = function() {
-    this.state = (this.a * this.state + this.c) % this.m;
-    return this.state;
-}
-RNG.prototype.nextRange = function(start, end) {
-    // returns in range [start, end): including start, excluding end
-    // can't modulu nextInt because of weak randomness in lower bits
-    let rangeSize = end - start;
-    let randomUnder1 = this.nextInt() / this.m;
-    return start + Math.floor(randomUnder1 * rangeSize);
-}
-
-export function toGameInfoData(levelObject, bricksInfoObject){
-    // функция которая принимает обхект с данными об уровне и возвращает объект с данными
-// об уровне и {} с данными для всех bricks
-
-    return {
-        levelData: levelObject,
-        itemData: bricksInfoObject,
+export function toGameInfoData(level, settings) {
+    // озвращает объект с данными о текущем уровне + данные всех [bricks]
+    const isTutorial = level === 0;
+    if (!level) {
+        level = 0
     }
+    const levelObject = levels.find(obj => obj.level === level);
+    const items = [];
+    let rows = levelObject.rows;
+    let cols = levelObject.columns;
+    let value = rows * cols - 1;
+
+    while (rows--) {
+        const arr = [];
+        cols = levelObject.columns;
+        while (cols--) {
+            const color = settings.colors[rng.nextRange(0, settings.colors.length - 1)];
+            const animation = settings.animations[rng.nextRange(0, settings.animations.length - 1)];
+            const number = levelObject.level === 0
+                ? levelObject.tutorialNumbers[value]
+                : rng.nextRange(levelObject.minValue, levelObject.maxValue);
+            const finger = levelObject.isTutorial ?? null;
+            arr.unshift(Object.create({color, animation, number, finger}));
+            value--;
+        }
+        items.unshift(arr);
+    }
+
+    const arrNumbers = isTutorial ? null : items.flat().map((el) => {
+        return el.number;
+    });
+    const currentValue = isTutorial ? levelObject.currentValue
+        : arrNumbers[rng.nextRange(0, arrNumbers.length - 1)];
+
+    return {...levelObject, currentValue, items};
 }

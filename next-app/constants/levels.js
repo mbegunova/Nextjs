@@ -6,8 +6,10 @@ export const levels = [
         animations: false,
         isTutorial: true,
         tutorialNumbers: [
-            40, 885, 6, 35, 1, 75
-        ]
+            75, 1, 35, 6, 885, 40,
+        ],
+        currentValue: 75,
+        size: 1,
     },
     {
         level: 1,
@@ -15,8 +17,8 @@ export const levels = [
         rows: 2,
         animations: false,
         minValue: 5,
-        maxValue:100,
-
+        maxValue: 100,
+        size: 1,
     },
     {
         level: 2,
@@ -24,7 +26,8 @@ export const levels = [
         rows: 2,
         animations: false,
         minValue: 5,
-        maxValue:100,
+        maxValue: 100,
+        size: 1,
     },
     {
         level: 3,
@@ -32,7 +35,8 @@ export const levels = [
         rows: 2,
         animations: true,
         minValue: 100,
-        maxValue:1000,
+        maxValue: 1000,
+        size: 1,
     },
     {
         level: 4,
@@ -40,7 +44,8 @@ export const levels = [
         rows: 3,
         animations: true,
         minValue: 100,
-        maxValue:1000,
+        maxValue: 1000,
+        size: 2,
     },
     {
         level: 5,
@@ -48,7 +53,8 @@ export const levels = [
         rows: 3,
         animations: true,
         minValue: 100,
-        maxValue:1000,
+        maxValue: 1000,
+        size: 2,
     },
     {
         level: 6,
@@ -56,7 +62,8 @@ export const levels = [
         rows: 4,
         animations: true,
         minValue: 100,
-        maxValue:1000,
+        maxValue: 1000,
+        size: 3,
     },
     {
         level: 7,
@@ -64,7 +71,8 @@ export const levels = [
         rows: 4,
         animations: true,
         minValue: 100,
-        maxValue:10000,
+        maxValue: 10000,
+        size: 3,
     },
     {
         level: 8,
@@ -72,7 +80,8 @@ export const levels = [
         rows: 5,
         animations: true,
         minValue: 500,
-        maxValue:10000,
+        maxValue: 10000,
+        size: 4,
     },
     {
         level: 9,
@@ -80,7 +89,8 @@ export const levels = [
         rows: 5,
         animations: true,
         minValue: 500,
-        maxValue:10000,
+        maxValue: 10000,
+        size: 4,
     },
 ]
 
@@ -90,12 +100,13 @@ const test = {
     rows: 2,
     animations: false,
     minValue: 5,
-    maxValue:100,
-
+    maxValue: 100,
+    items: []
 }
 
 f(test);
+
 function f(test) {
 
-    return test + {items:[]}
+    return test + {items: []}
 }

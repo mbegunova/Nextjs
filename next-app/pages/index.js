@@ -6,22 +6,23 @@ import Counter from "../components/counter/counter";
 import Statistics from "../components/statistics/statistics";
 import {stat, result} from "../constants/statistics";
 import {fromStatToResult} from "../utils/statHelper.js";
+import GameWrapper from "../components/GameWrapper/GameWrapper";
 
 export default function Home() {
     const [state, setState] = useState("tutorial");
     const GAME_WRAPPER = "game-wrapper";
     const [time, setTime] = useState(3);
     const [isReset, setIsReset] = useState(false);
+    let result;
 
     return (
         <div className={GAME_WRAPPER}>
             {
-                CurrentComponent()
-                /*
-                <Game className={`${GAME_WRAPPER}__game`} onAction={() => {
+                <GameWrapper className={GAME_WRAPPER} isTutorial={false}
+                             modifier={"tutorial"} onEnd={() => {
                     setState("statistics")
-                }}/>
-                */
+                }
+                }/>
                 //CurrentComponent()
             }
         </div>
@@ -40,13 +41,10 @@ export default function Home() {
                 )
             }
             case "game-tutorial": {
-                return (
-
-                    <Game className={`${GAME_WRAPPER}__game`} modifier={"tutorial"}  onAction={() => {
-                        setState("counter")
-                    }}>
-                    </Game>
-                )
+                return <GameWrapper className={GAME_WRAPPER} modifier={"tutorial"} onAction={() => {
+                    setState("counter");
+                }}/>
+                break;
             }
             case "counter": {
                 return (
@@ -59,12 +57,13 @@ export default function Home() {
                 )
             }
             case "game": {
-                return (
-                    <Game className={`${GAME_WRAPPER}__game`}  onAction={() => {
-                        setState("statistics")
-                    }}>
-                    </Game>
-                )
+                return <GameWrapper className={GAME_WRAPPER} onEnd={(resultList) => {
+                    result = resultList;
+                    setState("statistics")
+                }
+                }/>;
+
+                break;
             }
             case "statistics": {
                 return (

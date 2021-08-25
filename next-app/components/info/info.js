@@ -1,15 +1,18 @@
 import {infoElements} from "../../constants/constants.js"
 import Element from "../element/element";
 import Bonus from "../bonus/bonus";
+import {useState} from "react";
 
 
-export default function Info({className="", isTutorial}) {
+export default function Info({className="", isActive}) {
+    const [seconds, setSeconds] = useState(isActive? 60 : null);
+
     return (
-        isTutorial ? null
-        : <div className={`${className} info`}>
+        isActive ? <div className={`${className} info`}>
                 {elementsList()}
                 <Bonus/>
             </div>
+            : null
     )
 
     function elementsList() {

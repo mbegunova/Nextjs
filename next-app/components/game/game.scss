@@ -73,8 +73,15 @@
     height: 38px;
     text-align: center;
     width: 200px;
-
 }
+
+  &_disappear{
+    .game__field {
+      animation: 1s ease-in alternate slidein;
+      overflow: hidden;
+    }
+  }
+
 }
 
 

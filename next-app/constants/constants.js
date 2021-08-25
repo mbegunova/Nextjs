@@ -2,9 +2,9 @@ export const settings = {
     colors: [
         '#f28f34',
         '#fc74b2',
-        '#4cb9ed',
         '#8f3acc',
         '#95ca4c',
+        '#4cb9ed',
     ],
     animations: [
         'rotate-animation',
@@ -55,7 +55,7 @@ export const items = [
         },
         {
             number: 4,
-            animation: "rotate",
+            animation: "opacity-animation",
             color: "#ea3838"
         },
         {
@@ -67,7 +67,7 @@ export const items = [
     [
         {
             number: 4,
-            animation: "rotate",
+            animation: "opacity-animation",
             color: "#f37f7f"
         },
         {
