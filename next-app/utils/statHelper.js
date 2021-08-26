@@ -2,9 +2,9 @@ import {stat} from "../constants/statistics";
 import {levels} from "../constants/levels";
 import {rng} from "./rng";
 
-export function fromStatToResult(statList) {
+export function fromStatToResult(resultList) {
     // преобразут список статистики к шаблонные строки
-    return Object.entries(statList).map(([key, value]) => {
+    return Object.entries(resultList).map(([key, value]) => {
         switch (key) {
             case "rightAnswers":
                 value = `${value.right} из ${value.all}`
@@ -54,4 +54,15 @@ export function toGameInfoData(level, settings) {
         : arrNumbers[rng.nextRange(0, arrNumbers.length - 1)];
 
     return {...levelObject, currentValue, items};
+}
+
+export function createResultObject(){
+    return {
+        totalPoints: 0,
+        rightAnswers:{
+            right:0,
+            all:0,
+        },
+        accuracyAnswers:0,
+    };
 }

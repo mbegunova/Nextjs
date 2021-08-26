@@ -4,7 +4,7 @@ import Tutorial from "../components/tutorial/tutorial";
 import {useState} from "react";
 import Counter from "../components/counter/counter";
 import Statistics from "../components/statistics/statistics";
-import {stat, result} from "../constants/statistics";
+import {stat, result as resultTest} from "../constants/statistics";
 import {fromStatToResult} from "../utils/statHelper.js";
 import GameWrapper from "../components/GameWrapper/GameWrapper";
 
@@ -16,16 +16,23 @@ export default function Home() {
     let result;
 
     return (
+        /*
         <div className={GAME_WRAPPER}>
             {
                 <GameWrapper className={GAME_WRAPPER} isTutorial={false}
-                             modifier={"tutorial"} onEnd={() => {
-                    setState("statistics")
-                }
-                }/>
-                //CurrentComponent()
+                             modifier={"tutorial"}
+                             onEnd={(res) => {
+                                 result = res;
+                                 setState("statistics");
+                                 console.log("TheEND");
+                             }
+                             }/>
             }
         </div>
+        */
+        <>{
+            CurrentComponent()
+        } </>
     )
 
     function CurrentComponent() {
@@ -34,16 +41,24 @@ export default function Home() {
             case "tutorial": {
                 return (
                     <Main className={`${GAME_WRAPPER}__main`} isTutorial={true} onAction={() => {
-                        setState("game-tutorial");
+                        setState("game");
                     }}>
                         <Tutorial className={`${GAME_WRAPPER}__tutorial`}/>
                     </Main>
                 )
             }
+            /*
             case "game-tutorial": {
-                return <GameWrapper className={GAME_WRAPPER} modifier={"tutorial"} onAction={() => {
-                    setState("counter");
-                }}/>
+                return <div className={GAME_WRAPPER}>
+                    {
+                        <GameWrapper className={GAME_WRAPPER} isTutorial={true}
+                                     modifier={"tutorial"}
+                                     onToCounter = { () =>{
+                                         setState("counter");
+                                     }
+                                     }/>
+                    }
+                </div>;
                 break;
             }
             case "counter": {
@@ -56,12 +71,20 @@ export default function Home() {
                     }}/>
                 )
             }
+            */
             case "game": {
-                return <GameWrapper className={GAME_WRAPPER} onEnd={(resultList) => {
-                    result = resultList;
-                    setState("statistics")
-                }
-                }/>;
+                return <div className={GAME_WRAPPER}>
+                    {
+                        <GameWrapper className={GAME_WRAPPER} isTutorial={false}
+                                     modifier={"tutorial"}
+                                     onEnd={(res) => {
+                                         result = res;
+                                         setState("statistics");
+                                         console.log("TheEND -> result", result);
+                                     }
+                                     }/>
+                    }
+                </div>;
 
                 break;
             }
@@ -72,7 +95,7 @@ export default function Home() {
                               setState("tutorial")
                           }} modifier={"result"}>
                         <Statistics className={`${GAME_WRAPPER}__statistics`} statList={stat}
-                                    resultObj={fromStatToResult(result)}/>
+                                    resultObj={result}/>
                     </Main>
                 )
             }

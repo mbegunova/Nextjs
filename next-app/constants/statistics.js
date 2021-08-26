@@ -22,14 +22,5 @@ export const stat = {
 }
 
 
-export const result = {
-    totalPoints: 0,
-    rightAnswers: {
-        right: 2,
-        all: 3,
-    },
-    accuracyAnswers: 0.5
-}
-
 
 

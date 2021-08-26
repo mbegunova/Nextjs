@@ -1,15 +1,18 @@
 import Game from "../game/game";
 import {useState} from "react";
 import {levels} from "../../constants/levels";
+import {createResultObject} from "../../utils/statHelper";
 
 
 export default function GameWrapper({className, modifier, onEnd, onToCounter}) {
     const [isTutorial, setIsTutorial] = useState(false);
     const [level, setLevel] = useState(isTutorial ? 0 : 1);
     let result = createResultObject();
+    let isEnd = false;
+
     //TODO: делать подсчет результатов c выводом на экран
     //TODO: реализовать таймер и переключение после него
-    console.log(isTutorial)
+
     return (
         <div className={className}>
             <Game className={`${className}__game`} modifier={isTutorial ? "tutorial" : null}
@@ -17,18 +20,20 @@ export default function GameWrapper({className, modifier, onEnd, onToCounter}) {
                   level={level} color={'#4cb9ed'}
                   onClick={() => {
                       if (!isTutorial || typeof onToCounter !== "function") return;
-                      onToCounter()
+                      onToCounter();
                   }}
                   onSelect={
                       (number, currentValue) => {
                           if (isTutorial) return;
-                          result = handlerWithResult(number, currentValue, setLevel, level, result);
+                          [result, isEnd] = handlerWithResult(number, currentValue, setLevel, level, result);
+                          console.log("result: ", result, "level", level);
+                          console.log(isEnd);
+                          if(isEnd) onEnd(result);
                       }
                   }
             />
         </div>
     )
-
 }
 
 function handlerWithResult(number, currentValue, setLevel, level, result) {
@@ -40,6 +45,9 @@ function handlerWithResult(number, currentValue, setLevel, level, result) {
     const a = result.rightAnswers.right += isRight? 1: 0;
     const b = result.rightAnswers.all +=1;
     result.accuracyAnswers = Math.round(a/b*100);
+    //if(nextLevel===levels.length-1) onEnd(result);
+    const isEnd = nextLevel === 3;
+    return [result, isEnd];
 }
 
 
@@ -57,15 +65,8 @@ function lvlChange(level, isUp) {
 
 function showReactionImage(isRight) {
     isRight ? console.log("вы правы") : console.log("неверно");
+    //console.log(document);
+    //const image = document.createElement(<img className={`game-wrapper__${isRight? "right":"wrong"}`}/>)
+   // setTimeout(()=>{document.removeChild(image)}, 1000);
 }
 
-function createResultObject(){
-    return {
-        totalPoints: 0,
-        rightAnswers:{
-            right:0,
-            all:0,
-        },
-        accuracyAnswers:0,
-    };
-}
