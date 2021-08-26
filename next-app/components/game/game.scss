@@ -8,11 +8,7 @@
   position: absolute;
   background: rgb(77, 184, 236) none scroll;
   overflow: hidden;
-
-  &_slidein{
-      animation-duration: 3s;
-      animation-name: slidein;
-  }
+  transition: all 0.5s ease-in-out;
 
   &__info {
     position: absolute;
@@ -77,21 +73,29 @@
 
   &_disappear{
     .game__field {
-      animation: 1s ease-in alternate slidein;
+      animation: 1s ease-in alternate slideIn;
       overflow: hidden;
     }
   }
-
-}
-
-
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-  }
-
-  to {
-    margin-left: 0%;
+  &_show{
+    .game__field {
+      animation: .5s ease-in alternate slideOut;
+      overflow: hidden;
+    }
   }
 }
+
+@keyframes slideIn {
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+@keyframes slideOut {
+  0%{
+    transform: translateX(+1000px);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+

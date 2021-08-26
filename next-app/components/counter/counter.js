@@ -42,7 +42,7 @@ function updateTimer(timerId, setTimerId, value, setCount) {
     setTimerId(intervalId);
 
 }
-
+/*
 Counter.propTypes = {
     className: PropTypes.string,
     onAction: PropTypes.function,
@@ -50,3 +50,5 @@ Counter.propTypes = {
     value: PropTypes.number,
     isReset: PropTypes.any,
 };
+
+ */

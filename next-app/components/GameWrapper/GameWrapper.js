@@ -1,23 +1,29 @@
 import Game from "../game/game";
 import {useState} from "react";
 import {levels} from "../../constants/levels";
-import {createResultObject} from "../../utils/statHelper";
 
 
-export default function GameWrapper({className, modifier, onEnd, onToCounter}) {
-    const [isTutorial, setIsTutorial] = useState(false);
+export default function GameWrapper({className = "", modifier, onEnd, onToCounter, result}) {
+    const [isTutorial, setIsTutorial] = useState(!!modifier);
+    const [image, setImage] = useState(null);
     const [level, setLevel] = useState(isTutorial ? 0 : 1);
-    let result = createResultObject();
-    let isEnd = false;
-
-    //TODO: делать подсчет результатов c выводом на экран
-    //TODO: реализовать таймер и переключение после него
-
+    let isEnd, isRight = false;
+    const RIGHT_IMAGE = "images/right.png";
+    const WRONG_IMAGE = "images/wrong.png";
+    const THE_LAST_LEVEL = 9;
     return (
         <div className={className}>
-            <Game className={`${className}__game`} modifier={isTutorial ? "tutorial" : null}
+            {image === null
+                ? null
+                :
+                <img className={`${className}__reaction`} src={image} alt={`${image === RIGHT_IMAGE ? "yes" : "no"}`}/>}
+            <Game className={`${className}__game`}
+                  modifier={isTutorial ? "tutorial" : null}
+                  isDisappear={image !== null}
                   isTutorial={isTutorial}
-                  level={level} color={'#4cb9ed'}
+                  level={level}
+                  color={'#4cb9ed'}
+                  result={result}
                   onClick={() => {
                       if (!isTutorial || typeof onToCounter !== "function") return;
                       onToCounter();
@@ -25,10 +31,14 @@ export default function GameWrapper({className, modifier, onEnd, onToCounter}) {
                   onSelect={
                       (number, currentValue) => {
                           if (isTutorial) return;
-                          [result, isEnd] = handlerWithResult(number, currentValue, setLevel, level, result);
-                          console.log("result: ", result, "level", level);
-                          console.log(isEnd);
-                          if(isEnd) onEnd(result);
+                          [result, isRight] = handlerWithResult(number, currentValue, setLevel, level, result);
+                          debugger
+                          isEnd = (level === THE_LAST_LEVEL && isRight);
+                          isRight ? setImage(RIGHT_IMAGE) : setImage(WRONG_IMAGE);
+                          setTimeout(() => {
+                              setImage(null)
+                          }, 800);
+                          if (isEnd) onEnd(result);
                       }
                   }
             />
@@ -37,24 +47,19 @@ export default function GameWrapper({className, modifier, onEnd, onToCounter}) {
 }
 
 function handlerWithResult(number, currentValue, setLevel, level, result) {
-    const isRight = selectedHandler(number, currentValue)
+    const isRight = number === currentValue;
+    isRight ? console.log("вы правы") : console.log("неверно");
     const nextLevel = lvlChange(level, isRight);
     if (nextLevel !== level)
         setLevel(nextLevel);
-    result.totalPoints+=level;
-    const a = result.rightAnswers.right += isRight? 1: 0;
-    const b = result.rightAnswers.all +=1;
-    result.accuracyAnswers = Math.round(a/b*100);
-    //if(nextLevel===levels.length-1) onEnd(result);
-    const isEnd = nextLevel === 3;
-    return [result, isEnd];
-}
 
-
-function selectedHandler(number, currentValue) {
-    const isRight = number === currentValue;
-    showReactionImage(isRight);
-    return isRight;
+    isRight ? result.rightTogether += 1 : result.rightTogether = 0;
+    debugger
+    result.totalPoints += isRight ? (level * result.rightTogether) : 0;
+    const a = result.rightAnswers.right += (isRight ? 1 : 0);
+    const b = result.rightAnswers.all += 1;
+    result.accuracyAnswers = (a / b);
+    return [result, isRight];
 }
 
 function lvlChange(level, isUp) {
@@ -62,11 +67,4 @@ function lvlChange(level, isUp) {
     return Math.min(levels.length - 1, Math.max(1, nextLevel));
 }
 
-
-function showReactionImage(isRight) {
-    isRight ? console.log("вы правы") : console.log("неверно");
-    //console.log(document);
-    //const image = document.createElement(<img className={`game-wrapper__${isRight? "right":"wrong"}`}/>)
-   // setTimeout(()=>{document.removeChild(image)}, 1000);
-}
 

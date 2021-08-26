@@ -20,7 +20,7 @@ export default function Field({className = "", onSelect, dataForGame}) {
         arr.map(({number, animation, color, finger}, index2) => {
             rowOfBricks.push(<Brick className={"field__brick"} key={index1 + index2} number={number}
                                     animationModifier={animation} sizeModifier={dataForGame.size}
-                                    color={color} isFingered={finger} onAction={(number) => {onSelect(number);}}/>);
+                                    color={color} isFingered={finger} isTutorial={dataForGame.isTutorial} onAction={(number) => {onSelect(number);}}/>);
         })
         return rowOfBricks;
     }

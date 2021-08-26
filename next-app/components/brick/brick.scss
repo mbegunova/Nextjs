@@ -39,28 +39,28 @@
   &_2 {
     width: 109px;
     height: 62px;
-    font-size: 30px;
+    font-size: 35px;
     line-height: 60px;
   }
 
   &_3 {
     width: 109px;
     height: 52px;
-    font-size: 24px;
+    font-size: 32px;
     line-height: 50px;
   }
 
   &_4 {
     width: 87.3px;
     height: 40px;
-    font-size: 18px;
+    font-size:26px;
     line-height: 40px;
   }
 
   &__finger {
     pointer-events: none;
   }
-  /*
+
     &_rotate-animation {
       .brick__number-wrapper {
         animation: .6s linear infinite rotate-animation;
@@ -74,7 +74,7 @@
     &_opacity-animation {
       animation: .4s ease-in infinite alternate blink-anim;
     }
-  */
+
 }
 
 @keyframes pulse {

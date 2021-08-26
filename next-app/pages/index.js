@@ -1,39 +1,20 @@
 import Main from "../components/main/main";
-import Game from "../components/game/game";
 import Tutorial from "../components/tutorial/tutorial";
 import {useState} from "react";
 import Counter from "../components/counter/counter";
 import Statistics from "../components/statistics/statistics";
-import {stat, result as resultTest} from "../constants/statistics";
-import {fromStatToResult} from "../utils/statHelper.js";
+import {stat} from "../constants/statistics";
 import GameWrapper from "../components/GameWrapper/GameWrapper";
+import {useResult} from "../hooks/resultObject";
 
 export default function Home() {
     const [state, setState] = useState("tutorial");
     const GAME_WRAPPER = "game-wrapper";
     const [time, setTime] = useState(3);
     const [isReset, setIsReset] = useState(false);
-    let result;
+    const [result, setResult] = useResult(); //наш хук
 
-    return (
-        /*
-        <div className={GAME_WRAPPER}>
-            {
-                <GameWrapper className={GAME_WRAPPER} isTutorial={false}
-                             modifier={"tutorial"}
-                             onEnd={(res) => {
-                                 result = res;
-                                 setState("statistics");
-                                 console.log("TheEND");
-                             }
-                             }/>
-            }
-        </div>
-        */
-        <>{
-            CurrentComponent()
-        } </>
-    )
+    return (CurrentComponent())
 
     function CurrentComponent() {
 
@@ -41,63 +22,55 @@ export default function Home() {
             case "tutorial": {
                 return (
                     <Main className={`${GAME_WRAPPER}__main`} isTutorial={true} onAction={() => {
-                        setState("game");
+                        setState("game-tutorial");
                     }}>
                         <Tutorial className={`${GAME_WRAPPER}__tutorial`}/>
                     </Main>
                 )
             }
-            /*
             case "game-tutorial": {
-                return <div className={GAME_WRAPPER}>
-                    {
-                        <GameWrapper className={GAME_WRAPPER} isTutorial={true}
+                return (<GameWrapper className={GAME_WRAPPER} isTutorial={true}
                                      modifier={"tutorial"}
-                                     onToCounter = { () =>{
+                                     onToCounter={() => {
                                          setState("counter");
                                      }
-                                     }/>
-                    }
-                </div>;
-                break;
-            }
-            case "counter": {
-                return (
-                    <Counter className={`${GAME_WRAPPER}__counter`} value={time}
-                             afterReset={() => {
-                                 setIsReset(!isReset)
-                             }} isReset={isReset} onAction={() => {
-                        setState("game")
-                    }}/>
-                )
-            }
-            */
-            case "game": {
-                return <div className={GAME_WRAPPER}>
-                    {
-                        <GameWrapper className={GAME_WRAPPER} isTutorial={false}
-                                     modifier={"tutorial"}
-                                     onEnd={(res) => {
-                                         result = res;
-                                         setState("statistics");
-                                         console.log("TheEND -> result", result);
-                                     }
-                                     }/>
-                    }
-                </div>;
+                                     }/>)
 
                 break;
             }
+            case "counter": {
+                return (<Counter className={`${GAME_WRAPPER}__counter`} value={time}
+                                 afterReset={() => {
+                                     setIsReset(!isReset)
+                                 }} isReset={isReset} onAction={() => {
+                    setState("game")
+                }}/>)
+            }
+            case "game": {
+                return (<GameWrapper className={GAME_WRAPPER} isTutorial={false}
+                                     result={result} setResult={setResult}
+                                     onEnd={({totalPoints, rightAnswers: {right, all}, accuracyAnswers, rightTogether}) => {
+                                         setResult.updateResult({
+                                             totalPoints,
+                                             rightAnswers: {right, all},
+                                             accuracyAnswers,
+                                             rightTogether,
+                                         });
+                                         setState("statistics");
+                                     }}
+                />);
+                break;
+            }
+
             case "statistics": {
-                return (
-                    <Main className={`${GAME_WRAPPER}__main ${GAME_WRAPPER}__main_result main`} isTutorial={false}
-                          onAction={() => {
-                              setState("tutorial")
-                          }} modifier={"result"}>
-                        <Statistics className={`${GAME_WRAPPER}__statistics`} statList={stat}
-                                    resultObj={result}/>
-                    </Main>
-                )
+                return (<Main className={`${GAME_WRAPPER}__main ${GAME_WRAPPER}__main_result main`} isTutorial={false}
+                              onAction={() => {
+                                  setState("tutorial");
+                                  setResult.resetResult();
+                              }} modifier={"result"}>
+                    <Statistics className={`${GAME_WRAPPER}__statistics`} statList={stat}
+                                resultObj={result}/>
+                </Main>)
             }
         }
     }

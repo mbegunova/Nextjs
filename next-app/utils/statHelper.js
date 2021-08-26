@@ -10,7 +10,7 @@ export function fromStatToResult(resultList) {
                 value = `${value.right} из ${value.all}`
                 break;
             case "accuracyAnswers":
-                value = `${value * 100}%`
+                value = `${Math.round(value * 100)}%`
                 break;
         }
         return [
@@ -36,11 +36,11 @@ export function toGameInfoData(level, settings) {
         cols = levelObject.columns;
         while (cols--) {
             const color = settings.colors[rng.nextRange(0, settings.colors.length - 1)];
-            const animation = settings.animations[rng.nextRange(0, settings.animations.length - 1)];
+            const animation = (isTutorial || level<3)? null : settings.animations[rng.nextRange(0, settings.animations.length - 1)];
             const number = levelObject.level === 0
                 ? levelObject.tutorialNumbers[value]
                 : rng.nextRange(levelObject.minValue, levelObject.maxValue);
-            const finger = levelObject.isTutorial ?? null;
+            const finger = (levelObject.isTutorial && value===0) ?? null;
             arr.unshift(Object.create({color, animation, number, finger}));
             value--;
         }
@@ -54,15 +54,4 @@ export function toGameInfoData(level, settings) {
         : arrNumbers[rng.nextRange(0, arrNumbers.length - 1)];
 
     return {...levelObject, currentValue, items};
-}
-
-export function createResultObject(){
-    return {
-        totalPoints: 0,
-        rightAnswers:{
-            right:0,
-            all:0,
-        },
-        accuracyAnswers:0,
-    };
 }

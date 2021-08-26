@@ -1,12 +1,11 @@
-export default function Brick({className = "", number, onAction, color, isFingered = false, animationModifier, sizeModifier}) {
-
+export default function Brick({className = "", number, onAction, color, isFingered = false, animationModifier, sizeModifier, isTutorial}) {
     return (
         <button className={`brick ${className}  ${animationModifier ? `brick_${animationModifier}` : ""}
         ${sizeModifier ? `brick_${sizeModifier}` : ""}`}
                 onClick={() => {
                     if (typeof onAction === "function") onAction(number);
                 }}
-                style={{backgroundColor: color}}>
+                style={{backgroundColor: (isTutorial && !isFingered) ? color.concat('7F') : color}}>
             <span className={"brick__number-wrapper"}>
                  {number}
             </span>

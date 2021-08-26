@@ -13,10 +13,9 @@ export default function Statistics({statList, resultObj}) {
 }
 
 function StatisticList(statList, resultObj) {
-    console.log(statList, resultObj, "in helper")
-    debugger
     return Object.entries(fromStatToResult(resultObj)).map(([key, object], index) => {
         const objectResult =  object[0];
+        console.log(objectResult);
         return (
             <tr className="statistics__item" key={index}>
                 <td className="statistics__item-text">{objectResult.text}</td>
