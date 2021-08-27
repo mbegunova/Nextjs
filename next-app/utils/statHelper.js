@@ -19,7 +19,7 @@ export function fromStatToResult(resultList) {
     })
 }
 
-export function toGameInfoData(level, settings) {
+export function toGameInfoData(level, {colors, animations}) {
     // озвращает объект с данными о текущем уровне + данные всех [bricks]
     const isTutorial = level === 0;
     if (!level) {
@@ -27,31 +27,27 @@ export function toGameInfoData(level, settings) {
     }
     const levelObject = levels.find(obj => obj.level === level);
     const items = [];
-    let rows = levelObject.rows;
-    let cols = levelObject.columns;
+    let {rows, columns: cols} = levelObject;
     let value = rows * cols - 1;
+    let randomIndex = rng.nextRange(0, value);
+    let currentValue = isTutorial ? levelObject.currentValue : null;
 
     while (rows--) {
         const arr = [];
         cols = levelObject.columns;
         while (cols--) {
-            const color = settings.colors[rng.nextRange(0, settings.colors.length - 1)];
-            const animation = (isTutorial || level<3)? null : settings.animations[rng.nextRange(0, settings.animations.length - 1)];
+            const color = colors[rng.nextRange(0, colors.length - 1)];
+            const animation = (isTutorial || level < 3) ? null : animations[rng.nextRange(0, animations.length - 1)];
             const number = levelObject.level === 0
                 ? levelObject.tutorialNumbers[value]
                 : rng.nextRange(levelObject.minValue, levelObject.maxValue);
-            const finger = (levelObject.isTutorial && value===0) ?? null;
+            const finger = (levelObject.isTutorial && !value) ?? null;
+            if (!isTutorial && value === randomIndex) currentValue = number;
             arr.unshift(Object.create({color, animation, number, finger}));
             value--;
         }
         items.unshift(arr);
     }
-
-    const arrNumbers = isTutorial ? null : items.flat().map((el) => {
-        return el.number;
-    });
-    const currentValue = isTutorial ? levelObject.currentValue
-        : arrNumbers[rng.nextRange(0, arrNumbers.length - 1)];
 
     return {...levelObject, currentValue, items};
 }

@@ -79,7 +79,7 @@
   }
   &_show{
     .game__field {
-      animation: .5s ease-in alternate slideOut;
+      animation: .5s ease-out alternate slideOut;
       overflow: hidden;
     }
   }
@@ -87,7 +87,7 @@
 
 @keyframes slideIn {
   100% {
-    transform: translateX(-1000px);
+    transform: translateX(-100vw);
   }
 }
 @keyframes slideOut {
@@ -95,7 +95,7 @@
     transform: translateX(+1000px);
   }
   100% {
-    transform: translateX(100px);
+    transform: translateX(0px);
   }
 }
 

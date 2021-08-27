@@ -1,11 +1,8 @@
-import {Fragment} from "react";
-
-
-export default function Element(props) {
-    return(
-        <div className="info__element element">
-            <h4 className="element__text">{props.text}</h4>
-            <p className="element__value">{props.value}</p>
+export default function Element({className = "", text, value}) {
+    return (
+        <div className={`${className} element`}>
+            <h4 className="element__text">{text}</h4>
+            <p className="element__value">{value}</p>
         </div>
     )
 }

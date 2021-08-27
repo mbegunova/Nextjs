@@ -36,7 +36,6 @@ export default function Home() {
                                      }
                                      }/>)
 
-                break;
             }
             case "counter": {
                 return (<Counter className={`${GAME_WRAPPER}__counter`} value={time}
@@ -49,17 +48,16 @@ export default function Home() {
             case "game": {
                 return (<GameWrapper className={GAME_WRAPPER} isTutorial={false}
                                      result={result} setResult={setResult}
-                                     onEnd={({totalPoints, rightAnswers: {right, all}, accuracyAnswers, rightTogether}) => {
-                                         setResult.updateResult({
-                                             totalPoints,
-                                             rightAnswers: {right, all},
-                                             accuracyAnswers,
-                                             rightTogether,
-                                         });
-                                         setState("statistics");
+                                     onEnd={({totalPoints, rightAnswers: {right, all}}) => {
+                                         setTimeout(() => {
+                                             setResult.updateResult({
+                                                 totalPoints,
+                                                 rightAnswers: {right, all},
+                                             });
+                                             setState("statistics");
+                                         }, 800)
                                      }}
                 />);
-                break;
             }
 
             case "statistics": {

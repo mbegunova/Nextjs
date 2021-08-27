@@ -5,16 +5,15 @@ import {settings} from "../../constants/constants";
 import {useEffect, useState} from "react";
 import {rng} from "../../utils/rng";
 
-export default function Game({ className, modifier, onClick, level, isTutorial = false, color,
-                                 onSelect, isDisappear, result
+export default function Game({   className, modifier, onClick, level, isTutorial = false, color,
+                                 onSelect, isDisappear, result, timeIsOut, bonusLevel
                              }) {
-    const TIME = "00:00";
     const [dataForGame, setDataForGame] = useState(toGameInfoData(level, settings));
     const [colorCurrent, setColor] = useState(color);
     const [isShow, setIsShow] = useState(!isTutorial);
 
     useEffect(() => {
-        if(isTutorial) return;
+        if (isTutorial) return;
         setIsShow(true);
         setTimeout(() => {
             setIsShow(false);
@@ -25,7 +24,7 @@ export default function Game({ className, modifier, onClick, level, isTutorial =
         setDataForGame(toGameInfoData(level, settings));
         if (level < 3) return;
         setColor(settings.colors[rng.nextRange(0, settings.colors.length - 1)]);
-    }, [level])
+    }, [level, bonusLevel])
 
 
     return (
@@ -39,7 +38,10 @@ export default function Game({ className, modifier, onClick, level, isTutorial =
         >
             {isTutorial ? null
                 : <Info className={"game__info"} isActive={!isTutorial}
-                                       infoObject={[TIME, level, result?.totalPoints, result.rightTogether]}/>}
+                        timeIsOut={() => {
+                            timeIsOut();
+                        }}
+                        infoObject={[level, result?.totalPoints, result.rightTogether]}/>}
             <div className="game__task">
                 <h2 className="game__task-text">Найдите указанное число:</h2>
                 <span className="game__task-value">{dataForGame.currentValue}</span>
@@ -47,6 +49,7 @@ export default function Game({ className, modifier, onClick, level, isTutorial =
             <Field
                 className={`game__field`} onSelect={(number) => {
                 if (typeof onSelect === "function") onSelect(number, dataForGame.currentValue);
+
             }}
                 dataForGame={dataForGame}
             />

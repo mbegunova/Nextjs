@@ -5,19 +5,21 @@ export const result = {
         all: 0,
     },
     accuracyAnswers: 0,
-    rightTogether:0,
+    rightTogether: 0,
 }
 
 export function useResult() {
     const {totalPoints, rightAnswers: {right, all}, accuracyAnswers, rightTogether} = result;
-    return [{totalPoints, rightAnswers:{right, all}, accuracyAnswers, rightTogether}, { updateResult,
-        resetResult}];
+    return [{totalPoints, rightAnswers: {right, all}, accuracyAnswers, rightTogether}, {
+        updateResult,
+        resetResult
+    }];
 }
 
-export function updateResult({totalPoints, rightAnswers: {right, all}, accuracyAnswers}) {
+export function updateResult({totalPoints, rightAnswers: {right, all}}) {
     setTotalPoints(totalPoints);
-    setRightAnswers(right,all);
-    setAccuracyAnswers(right/all);
+    setRightAnswers(right, all);
+    setAccuracyAnswers(right / all);
 }
 
 function setTotalPoints(value) {
@@ -34,8 +36,9 @@ function setRightAnswers(right, all) {
     rightAnswers.all = all ?? rightAnswers.all;
 }
 
-function resetResult(){
+
+function resetResult() {
     setTotalPoints(0);
-    setRightAnswers(0,0);
+    setRightAnswers(0, 0);
     setAccuracyAnswers(0);
 }

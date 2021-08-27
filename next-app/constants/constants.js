@@ -29,11 +29,11 @@ export const titles = {
 }
 
 export const infoElements = {
+    timer: {
+        text: "ВРЕМЯ",
+        value: "00:00"
+    },
     items: [
-        {
-            text: "ВРЕМЯ",
-            value: "00:00"
-        },
         {
             text: "УРОВЕНЬ",
             value: "1-1"
