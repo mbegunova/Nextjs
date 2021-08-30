@@ -17,5 +17,30 @@
     height: auto;
     padding: 3px;
   }
+}
 
+
+.fade-enter .field {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fade-enter-active .field {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.fade-exit .field {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.fade-exit-active .field {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.fade-enter-active .field,
+.fade-exit-active .field {
+  transition: opacity 500ms, transform 500ms;
 }

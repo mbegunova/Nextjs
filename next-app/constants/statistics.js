@@ -11,6 +11,10 @@ export const statistics = {
         {
             text: "Точность овтетов",
             value: 0
+        },
+        {
+            text: "Рекорд",
+            value: 0
         }
     ]
 }
@@ -19,6 +23,7 @@ export const stat = {
     totalPoints: "Текущий результат",
     rightAnswers: "Верных ответов",
     accuracyAnswers: "Точность овтетов",
+    record: "Рекорд"
 }
 
 

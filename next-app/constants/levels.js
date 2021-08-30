@@ -103,10 +103,3 @@ const test = {
     maxValue: 100,
     items: []
 }
-
-f(test);
-
-function f(test) {
-
-    return test + {items: []}
-}

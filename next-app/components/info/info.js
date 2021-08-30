@@ -8,7 +8,7 @@ export default function Info({className = "", isActive, infoObject, timeIsOut}) 
     return (
         isActive ? <div className={`${className} info`}>
                 <CountDownElement className={"info__element"} text={infoElements.timer.text}
-                                  timeValue={60} timeIsOut={() => {
+                                  timeValue={30} timeIsOut={() => {
                     timeIsOut();
                 }}/>
                 {elementsList()}

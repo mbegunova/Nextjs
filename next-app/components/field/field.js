@@ -1,6 +1,6 @@
 import Brick from "../brick/brick";
 
-export default function Field({className = "", onSelect, dataForGame}) {
+export default function Field({className = "", onSelect, dataForGame, wait = 0}) {
     return (
         <div className={`${className} field`}>
             {getBricks()}
@@ -18,9 +18,14 @@ export default function Field({className = "", onSelect, dataForGame}) {
     function getEcho(arr, index1) {
         const rowOfBricks = [];
         arr.map(({number, animation, color, finger}, index2) => {
-            rowOfBricks.push(<Brick className={"field__brick"} key={index1 + index2} number={number}
-                                    animationModifier={animation} sizeModifier={dataForGame.size}
-                                    color={color} isFingered={finger} isTutorial={dataForGame.isTutorial} onAction={(number) => {onSelect(number);}}/>);
+            rowOfBricks.push(
+                <Brick className={"field__brick"} key={index1 + index2} number={number}
+                       animationModifier={animation} sizeModifier={dataForGame.size}
+                       color={color} isFingered={finger} isTutorial={dataForGame.isTutorial} onAction={(number) => {
+                    onSelect(number);
+                }}
+                />
+            );
         })
         return rowOfBricks;
     }

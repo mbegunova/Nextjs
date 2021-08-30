@@ -3,15 +3,15 @@ import {useState} from "react";
 import {levels} from "../../constants/levels";
 
 
-export default function GameWrapper({className = "", modifier, onEnd, onToCounter, result}) {
+export default function GameWrapper({className = "", modifier, onEnd, onToCounter, result, setResult}) {
     const [isTutorial, setIsTutorial] = useState(!!modifier);
     const [image, setImage] = useState(null);
     const [level, setLevel] = useState(isTutorial ? 0 : 1);
-    const [bonusLevel, setBonusLevel] = useState(0)
+    const [allAnswers, setAllAnswers] = useState(0);
+    const [theEnd, setTheEnd] = useState(false)
     const RIGHT_IMAGE = "images/right.png";
     const WRONG_IMAGE = "images/wrong.png";
 
-    let theEnd = false;
     return (
         <div className={className}>
             {image === null
@@ -23,11 +23,11 @@ export default function GameWrapper({className = "", modifier, onEnd, onToCounte
                   isDisappear={image !== null}
                   isTutorial={isTutorial}
                   level={level}
-                  bonusLevel={bonusLevel}
+                  allAnswers={allAnswers}
                   color={'#4cb9ed'}
                   result={result}
                   timeIsOut={() => {
-                      theEnd = true;
+                      setTheEnd(true);
                   }}
                   onClick={() => {
                       if (!isTutorial || typeof onToCounter !== "function") return;
@@ -36,13 +36,21 @@ export default function GameWrapper({className = "", modifier, onEnd, onToCounte
                   onSelect={
                       (number, currentValue) => {
                           if (image !== null || isTutorial) return;
-                          const [res, isRight, bonusLvl] = handlerWithResult(number, currentValue, setLevel, level, result, bonusLevel);
-                          setBonusLevel(bonusLvl);
+                          const [isRight, resultObj] = handlerWithResult(number, currentValue, setLevel, level, result);
+                          setAllAnswers(resultObj.rightAnswers.all);
+                          const {totalPoints, rightAnswers: {right, all}} = resultObj;
+                          setResult.updateResult({
+                              totalPoints,
+                              rightAnswers: {right, all},
+                          });
+
                           isRight ? setImage(RIGHT_IMAGE) : setImage(WRONG_IMAGE);
+
                           setTimeout(() => {
                               setImage(null)
-                          }, 800);
-                          if (theEnd) onEnd(res);
+                          }, 500);
+
+                          if (theEnd) onEnd(result);
                       }
                   }
             />
@@ -50,24 +58,21 @@ export default function GameWrapper({className = "", modifier, onEnd, onToCounte
     )
 }
 
-function handlerWithResult(number, currentValue, setLevel, level, result, bonusLevel) {
+function handlerWithResult(number, currentValue, setLevel, level, result) {
+
     const isRight = number === currentValue;
     console.log(`${isRight ? "вы правы" : "неверно"}`);
     const nextLevel = lvlChange(level, isRight);
     if (nextLevel !== level)
-        setTimeout(() => {
-            setLevel(nextLevel);
-            bonusLevel = 0;
-        }, 800);
-    else if (level === levels.length - 1) bonusLevel++;
-    result.rightTogether = isRight ? ((result.rightTogether < 5) ? result.rightTogether + 1 : 5) : 0;
+        setLevel(nextLevel);
 
+    result.rightTogether = isRight ? ((result.rightTogether < 5) ? result.rightTogether + 1 : 5) : 0;
     if (isRight) result.totalPoints = result.totalPoints + (level * (result.rightTogether || 1));
     const a = result.rightAnswers.right += (isRight ? 1 : 0);
     const b = result.rightAnswers.all += 1;
     result.accuracyAnswers = (a / b);
-    console.log(result);
-    return [result, isRight, bonusLevel];
+
+    return [isRight, result];
 }
 
 function lvlChange(level, isUp) {

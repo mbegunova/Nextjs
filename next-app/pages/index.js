@@ -6,6 +6,8 @@ import Statistics from "../components/statistics/statistics";
 import {stat} from "../constants/statistics";
 import GameWrapper from "../components/GameWrapper/GameWrapper";
 import {useResult} from "../hooks/resultObject";
+import SwitchTransition from "react-transition-group/SwitchTransition";
+import CSSTransition from "react-transition-group/CSSTransition";
 
 export default function Home() {
     const [state, setState] = useState("tutorial");
@@ -14,10 +16,25 @@ export default function Home() {
     const [isReset, setIsReset] = useState(false);
     const [result, setResult] = useResult(); //наш хук
 
-    return (CurrentComponent())
+    const [mode, setMode] = useState("out-in");
+    const [stateMode, setStateMode] = useState(true);
+
+    return (
+
+        <SwitchTransition mode={mode}>
+            <CSSTransition
+                key={state}
+                addEndListener={(node, done) => {
+                    node.addEventListener("transitionend", done, false);
+                }}
+                classNames="fade">
+                {CurrentComponent()}
+            </CSSTransition>
+        </SwitchTransition>
+    )
+
 
     function CurrentComponent() {
-
         switch (state) {
             case "tutorial": {
                 return (
@@ -42,7 +59,7 @@ export default function Home() {
                                  afterReset={() => {
                                      setIsReset(!isReset)
                                  }} isReset={isReset} onAction={() => {
-                    setState("game")
+                    setState("game");
                 }}/>)
             }
             case "game": {
@@ -55,7 +72,7 @@ export default function Home() {
                                                  rightAnswers: {right, all},
                                              });
                                              setState("statistics");
-                                         }, 800)
+                                         }, 600)
                                      }}
                 />);
             }
@@ -73,4 +90,3 @@ export default function Home() {
         }
     }
 }
-

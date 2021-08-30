@@ -13,9 +13,11 @@ export default function Statistics({statList, resultObj}) {
 }
 
 function StatisticList(statList, resultObj) {
+    //console.log(statList);
+    //console.log(resultObj);
+    console.log(fromStatToResult(resultObj));
     return Object.entries(fromStatToResult(resultObj)).map(([key, object], index) => {
-        const objectResult =  object[0];
-        if(!objectResult.text) return;
+        const objectResult = object[0];
         return (
             <tr className="statistics__item" key={index}>
                 <td className="statistics__item-text">{objectResult.text}</td>

@@ -6,13 +6,15 @@ export const result = {
     },
     accuracyAnswers: 0,
     rightTogether: 0,
+    record: 0,
 }
 
 export function useResult() {
-    const {totalPoints, rightAnswers: {right, all}, accuracyAnswers, rightTogether} = result;
-    return [{totalPoints, rightAnswers: {right, all}, accuracyAnswers, rightTogether}, {
+    const {totalPoints, rightAnswers: {right, all}, accuracyAnswers, rightTogether, record} = result;
+    return [{totalPoints, rightAnswers: {right, all}, accuracyAnswers, rightTogether, record}, {
         updateResult,
-        resetResult
+        resetResult,
+        setRecord,
     }];
 }
 
@@ -36,6 +38,14 @@ function setRightAnswers(right, all) {
     rightAnswers.all = all ?? rightAnswers.all;
 }
 
+function getRecord() {
+    return result['record'] ?? 0;
+}
+
+function setRecord(value) {
+    if (value > result['record'])
+        result['record'] = value;
+}
 
 function resetResult() {
     setTotalPoints(0);

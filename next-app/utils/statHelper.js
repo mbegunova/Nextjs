@@ -4,7 +4,8 @@ import {rng} from "./rng";
 
 export function fromStatToResult(resultList) {
     // преобразут список статистики к шаблонные строки
-    return Object.entries(resultList).map(([key, value]) => {
+
+    return Object.entries(resultList).filter(([key,]) => key!=="rightTogether").map(([key, value]) => {
         switch (key) {
             case "rightAnswers":
                 value = `${value.right} из ${value.all}`

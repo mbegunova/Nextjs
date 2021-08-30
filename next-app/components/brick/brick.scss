@@ -53,7 +53,7 @@
   &_4 {
     width: 87.3px;
     height: 40px;
-    font-size:26px;
+    font-size: 26px;
     line-height: 40px;
   }
 
@@ -61,19 +61,19 @@
     pointer-events: none;
   }
 
-    &_rotate-animation {
-      .brick__number-wrapper {
-        animation: .6s linear infinite rotate-animation;
-      }
+  &_rotate-animation {
+    .brick__number-wrapper {
+      animation: .6s linear infinite rotate-animation;
     }
+  }
 
-    &_pulse-animation {
-      animation: .4s ease-in infinite alternate pulse;
-    }
+  &_pulse-animation {
+    animation: .4s ease-in infinite alternate pulse;
+  }
 
-    &_opacity-animation {
-      animation: .4s ease-in infinite alternate blink-anim;
-    }
+  &_opacity-animation {
+    animation: .4s ease-in infinite alternate blink-anim;
+  }
 
 }
 
@@ -104,4 +104,31 @@
     opacity: 0;
   }
 }
+
+
+.fade-enter .brick {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.fade-enter-active .brick {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.fade-exit .brick {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.fade-exit-active .brick {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.fade-enter-active .brick,
+.fade-exit-active .brick {
+  transition: opacity 500ms, transform 500ms;
+}
+
 
