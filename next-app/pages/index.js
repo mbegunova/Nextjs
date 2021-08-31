@@ -6,31 +6,22 @@ import Statistics from "../components/statistics/statistics";
 import {stat} from "../constants/statistics";
 import GameWrapper from "../components/GameWrapper/GameWrapper";
 import {useResult} from "../hooks/resultObject";
-import SwitchTransition from "react-transition-group/SwitchTransition";
 import CSSTransition from "react-transition-group/CSSTransition";
+import React from "react";
+import {timeForDisappearGame} from "../constants/constants";
 
 export default function Home() {
-    const [state, setState] = useState("tutorial");
+    const [state, setState] = useState("game");
     const GAME_WRAPPER = "game-wrapper";
     const [time, setTime] = useState(3);
     const [isReset, setIsReset] = useState(false);
     const [result, setResult] = useResult(); //наш хук
-
-    const [mode, setMode] = useState("out-in");
-    const [stateMode, setStateMode] = useState(true);
+    const [inProp, setInProp] = useState(false);
 
     return (
-
-        <SwitchTransition mode={mode}>
-            <CSSTransition
-                key={state}
-                addEndListener={(node, done) => {
-                    node.addEventListener("transitionend", done, false);
-                }}
-                classNames="fade">
-                {CurrentComponent()}
-            </CSSTransition>
-        </SwitchTransition>
+        <>
+            {CurrentComponent()}
+        </>
     )
 
 
@@ -63,18 +54,21 @@ export default function Home() {
                 }}/>)
             }
             case "game": {
-                return (<GameWrapper className={GAME_WRAPPER} isTutorial={false}
+                return (
+                    <CSSTransition in={inProp} timeout={timeForDisappearGame} classNames={`${state === "game" ? "my-node" : ""}`}>
+                        <GameWrapper className={GAME_WRAPPER} isTutorial={false}
                                      result={result} setResult={setResult}
                                      onEnd={({totalPoints, rightAnswers: {right, all}}) => {
-                                         setTimeout(() => {
-                                             setResult.updateResult({
-                                                 totalPoints,
-                                                 rightAnswers: {right, all},
-                                             });
-                                             setState("statistics");
-                                         }, 600)
+                                         setResult.updateResult({
+                                             totalPoints,
+                                             rightAnswers: {right, all},
+                                         });
+                                         setResult.setRecord(totalPoints);
+                                         setInProp(inProp => !inProp);
                                      }}
-                />);
+                        />
+                    </CSSTransition>
+                );
             }
 
             case "statistics": {

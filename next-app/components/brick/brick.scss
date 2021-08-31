@@ -106,29 +106,3 @@
 }
 
 
-.fade-enter .brick {
-  opacity: 0;
-  transform: translateX(100%);
-}
-
-.fade-enter-active .brick {
-  opacity: 1;
-  transform: translateX(0%);
-}
-
-.fade-exit .brick {
-  opacity: 1;
-  transform: translateX(0%);
-}
-
-.fade-exit-active .brick {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-
-.fade-enter-active .brick,
-.fade-exit-active .brick {
-  transition: opacity 500ms, transform 500ms;
-}
-
-

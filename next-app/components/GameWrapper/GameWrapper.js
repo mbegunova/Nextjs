@@ -1,26 +1,25 @@
 import Game from "../game/game";
 import {useState} from "react";
 import {levels} from "../../constants/levels";
-
+import React from 'react';
 
 export default function GameWrapper({className = "", modifier, onEnd, onToCounter, result, setResult}) {
     const [isTutorial, setIsTutorial] = useState(!!modifier);
-    const [image, setImage] = useState(null);
+    //const [image, setImage] = useState(null);
     const [level, setLevel] = useState(isTutorial ? 0 : 1);
     const [allAnswers, setAllAnswers] = useState(0);
     const [theEnd, setTheEnd] = useState(false)
     const RIGHT_IMAGE = "images/right.png";
     const WRONG_IMAGE = "images/wrong.png";
-
+    const image= null;
     return (
         <div className={className}>
-            {image === null
+            {/*{image === null
                 ? null
                 :
-                <img className={`${className}__reaction`} src={image} alt={`${image === RIGHT_IMAGE ? "yes" : "no"}`}/>}
+                <img className={`${className}__reaction`} src={image} alt={`${image === RIGHT_IMAGE ? "yes" : "no"}`}/>}*/}
             <Game className={`${className}__game`}
                   modifier={isTutorial ? "tutorial" : null}
-                  isDisappear={image !== null}
                   isTutorial={isTutorial}
                   level={level}
                   allAnswers={allAnswers}
@@ -44,11 +43,11 @@ export default function GameWrapper({className = "", modifier, onEnd, onToCounte
                               rightAnswers: {right, all},
                           });
 
-                          isRight ? setImage(RIGHT_IMAGE) : setImage(WRONG_IMAGE);
-
+                          //isRight ? setImage(RIGHT_IMAGE) : setImage(WRONG_IMAGE);
+/*
                           setTimeout(() => {
                               setImage(null)
-                          }, 500);
+                          }, timeForShowImageReaction);*/
 
                           if (theEnd) onEnd(result);
                       }

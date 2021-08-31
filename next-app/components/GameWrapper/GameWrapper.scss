@@ -19,29 +19,62 @@
 }
 
 
-.animation_container{
+$transitionTime: 3s;
+
+.my-node-exit-active, .my-node-enter-active {
+  .info {
+    opacity: 0;
+    transform: scale(.7);
+    transition: opacity ($transitionTime), transform ($transitionTime);
+  }
+
+  .game__task {
+    opacity: 0;
+    transform: scale(.7);
+    transition: opacity ($transitionTime*.3), transform ($transitionTime*.3);
+    transition-delay: ($transitionTime*.3);
+  }
+
+  .game__field {
+    opacity: 0;
+    transform: scale(.7);
+    transition: opacity ($transitionTime*.3), transform ($transitionTime*.3);
+    transition-delay: ($transitionTime*.67);
+  }
+}
+
+.my-node-enter, .my-node-exit {
+  .info, .game__task, .field {
+    opacity: 1;
+  }
+}
+
+
+.brick{
   .fade-enter{
     opacity: 0;
     transform: translateX(100%);
   }
-
-  .fade-enter-active{
-    opacity: 1;
-    transform: translateX(0%);
-  }
-
   .fade-exit{
     opacity: 1;
     transform: translateX(0%);
   }
-
-  .fade-exit-active{
+  .fade-enter-active,{
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  .fade-exit-active {
     opacity: 0;
     transform: translateX(-100%);
   }
+}
 
-  .fade-enter-active,
-  .fade-exit-active{
-    transition: opacity 500ms, transform 500ms;
+
+
+.fade-enter-active, .fade-exit-active {
+  .my-node-exit-active, .my-node-enter-active {
+    .brick {
+      transition: none;
+    }
   }
 }

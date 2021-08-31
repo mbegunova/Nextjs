@@ -13,9 +13,6 @@ export default function Statistics({statList, resultObj}) {
 }
 
 function StatisticList(statList, resultObj) {
-    //console.log(statList);
-    //console.log(resultObj);
-    console.log(fromStatToResult(resultObj));
     return Object.entries(fromStatToResult(resultObj)).map(([key, object], index) => {
         const objectResult = object[0];
         return (

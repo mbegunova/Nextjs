@@ -1,8 +1,10 @@
 import Brick from "../brick/brick";
+import {forwardRef} from "react";
 
-export default function Field({className = "", onSelect, dataForGame, wait = 0}) {
+function Field({className = "", onSelect, dataForGame}, ref) {
+
     return (
-        <div className={`${className} field`}>
+        <div ref={ref} className={`${className} field`}>
             {getBricks()}
         </div>
     )
@@ -30,3 +32,6 @@ export default function Field({className = "", onSelect, dataForGame, wait = 0})
         return rowOfBricks;
     }
 }
+
+const FieldWithRef = forwardRef(Field);
+export default FieldWithRef

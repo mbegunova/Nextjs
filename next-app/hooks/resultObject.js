@@ -38,13 +38,12 @@ function setRightAnswers(right, all) {
     rightAnswers.all = all ?? rightAnswers.all;
 }
 
-function getRecord() {
-    return result['record'] ?? 0;
-}
-
 function setRecord(value) {
-    if (value > result['record'])
+    if (value > result['record']) {
         result['record'] = value;
+        localStorage.setItem('record', value);
+    }
+    else result['record'] = Number(localStorage.getItem('record'));
 }
 
 function resetResult() {

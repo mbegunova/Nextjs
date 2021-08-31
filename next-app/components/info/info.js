@@ -2,13 +2,14 @@ import {infoElements} from "../../constants/constants.js"
 import Element from "../element/element";
 import Bonus from "../bonus/bonus";
 import CountDownElement from "../element/countDownElement";
+import {timeForCountDownInGame} from "../../constants/constants";
 
 
 export default function Info({className = "", isActive, infoObject, timeIsOut}) {
     return (
         isActive ? <div className={`${className} info`}>
                 <CountDownElement className={"info__element"} text={infoElements.timer.text}
-                                  timeValue={30} timeIsOut={() => {
+                                  timeValue={timeForCountDownInGame} timeIsOut={() => {
                     timeIsOut();
                 }}/>
                 {elementsList()}
