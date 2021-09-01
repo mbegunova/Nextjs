@@ -18,10 +18,45 @@
   }
 }
 
+//Константы для транзакций переключения\исчезновения
+$transitionTime: 2s;
+$brickSwipe: .5s;
 
-$transitionTime: 3s;
+.GW-enter, .GW-exit-done {
+  .info {
+    opacity: 0;
+  }
 
-.my-node-exit-active, .my-node-enter-active {
+  .game__task {
+    opacity: 0;
+  }
+
+  .field {
+    opacity: 0;
+  }
+}
+
+.GW-enter-active{
+  .info {
+    opacity: 1;
+    transition: opacity ($transitionTime);
+  }
+
+  .game__task {
+    opacity: 1;
+    transition: opacity ($transitionTime*.3);
+    transition-delay: ($transitionTime*.3);
+  }
+
+  .field {
+    opacity: 1;
+    transition: opacity ($transitionTime*.3);
+    transition-delay: ($transitionTime*.67);
+  }
+}
+
+
+.GW-exit-active{
   .info {
     opacity: 0;
     transform: scale(.7);
@@ -35,7 +70,7 @@ $transitionTime: 3s;
     transition-delay: ($transitionTime*.3);
   }
 
-  .game__field {
+  .field {
     opacity: 0;
     transform: scale(.7);
     transition: opacity ($transitionTime*.3), transform ($transitionTime*.3);
@@ -43,38 +78,26 @@ $transitionTime: 3s;
   }
 }
 
-.my-node-enter, .my-node-exit {
-  .info, .game__task, .field {
-    opacity: 1;
-  }
+
+
+.fade-enter .brick {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.fade-enter-active .brick {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.fade-exit .brick {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.fade-exit-active .brick {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.fade-enter-active .brick,
+.fade-exit-active .brick {
+  transition: opacity $brickSwipe, transform $brickSwipe;
 }
 
-
-.brick{
-  .fade-enter{
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  .fade-exit{
-    opacity: 1;
-    transform: translateX(0%);
-  }
-  .fade-enter-active,{
-    opacity: 1;
-    transform: translateX(0%);
-  }
-  .fade-exit-active {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-}
-
-
-
-.fade-enter-active, .fade-exit-active {
-  .my-node-exit-active, .my-node-enter-active {
-    .brick {
-      transition: none;
-    }
-  }
-}

@@ -5,6 +5,7 @@ import {settings, timeForSlideOutField} from "../../constants/constants";
 import React, {useEffect, useRef, useState} from "react";
 import {rng} from "../../utils/rng";
 import CSSTransition from "react-transition-group/CSSTransition";
+import SwitchTransition from "react-transition-group/SwitchTransition";
 
 export default function Game({
                                  className, modifier, onClick, level, isTutorial = false, color,
@@ -13,13 +14,13 @@ export default function Game({
     const [dataForGame, setDataForGame] = useState(toGameInfoData(level, settings));
     const [colorCurrent, setColor] = useState(color);
     let timeout;
-    const mode = "out-in";
     const [state, setState] = useState(false);
     const fieldRef = useRef();
 
-    useEffect(()=>{
-        setState(state => !state);
-    }, [])
+        useEffect(()=>{
+            if (isTutorial) return;
+            setState(state => !state);
+        }, [])
 
 
     useEffect(() => {
@@ -49,15 +50,17 @@ export default function Game({
                 <h2 className="game__task-text">Найдите указанное число:</h2>
                 <span className="game__task-value">{dataForGame.currentValue}</span>
             </div>
-                <CSSTransition in={state} timeout={timeForSlideOutField} nodeRef={fieldRef} classNames="fade">
-                    <Field
-                        className={`game__field`}  ref={fieldRef} onSelect={(number) => {
-                        setState(state => !state);
-                        if (typeof onSelect === "function") onSelect(number, dataForGame.currentValue);
-                    }}
-                        dataForGame={dataForGame}
-                    />
-                </CSSTransition>
+            <SwitchTransition mode={"out-in"}>
+            <CSSTransition key={state} timeout={timeForSlideOutField} nodeRef={fieldRef} classNames="fade">
+                <Field
+                    className={`game__field`} ref={fieldRef} onSelect={(number) => {
+                    setState(state => !state);
+                    if (typeof onSelect === "function") onSelect(number, dataForGame.currentValue);
+                }}
+                    dataForGame={dataForGame}
+                />
+            </CSSTransition>
+                </SwitchTransition>
             {modifier ? <div className={"game__to-continue"}>Нажите на экран, чтобы продолжить </div> : null}
         </div>
     )

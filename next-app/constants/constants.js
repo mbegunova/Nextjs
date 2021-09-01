@@ -82,11 +82,15 @@ export const items = [
         }
     ]
 ]
-export const timeForSlideOutField = 300;
+
+//константы времени в ms
+export const timeForSlideOutField = 500;
 export const timeForDisappearGame = {
-        enter: 3000,
-        exit: 3000,
+        enter: 1800,
+        exit: 1800,
 };
 export const timeForShowImageReaction = 500;
-export const timeForCountDownInGame = 10; // в секундах
+
+// в секундах обратный отсчет Игры
+export const timeForCountDownInGame = 5;
 

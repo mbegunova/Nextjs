@@ -1,6 +1,6 @@
 import Main from "../components/main/main";
 import Tutorial from "../components/tutorial/tutorial";
-import {useState} from "react";
+import {useRef, useState} from "react";
 import Counter from "../components/counter/counter";
 import Statistics from "../components/statistics/statistics";
 import {stat} from "../constants/statistics";
@@ -11,17 +11,18 @@ import React from "react";
 import {timeForDisappearGame} from "../constants/constants";
 
 export default function Home() {
-    const [state, setState] = useState("game");
+    const [state, setState] = useState("tutorial");
     const GAME_WRAPPER = "game-wrapper";
     const [time, setTime] = useState(3);
     const [isReset, setIsReset] = useState(false);
     const [result, setResult] = useResult(); //наш хук
     const [inProp, setInProp] = useState(false);
+    let isEnd = false;
+    const GameWrapperRef = useRef();
+
 
     return (
-        <>
-            {CurrentComponent()}
-        </>
+            CurrentComponent()
     )
 
 
@@ -55,16 +56,21 @@ export default function Home() {
             }
             case "game": {
                 return (
-                    <CSSTransition in={inProp} timeout={timeForDisappearGame} classNames={`${state === "game" ? "my-node" : ""}`}>
-                        <GameWrapper className={GAME_WRAPPER} isTutorial={false}
+                    <CSSTransition in={inProp} timeout={timeForDisappearGame}  nodeRef={GameWrapperRef} onExited={() => {
+                        setState("statistics");
+                    }}
+                                   classNames={`${state === "game" ? "GW" : ""}`}>
+                        <GameWrapper ref={GameWrapperRef} className={GAME_WRAPPER} isTutorial={false}
                                      result={result} setResult={setResult}
+                                     setInProp={setInProp}
                                      onEnd={({totalPoints, rightAnswers: {right, all}}) => {
                                          setResult.updateResult({
                                              totalPoints,
                                              rightAnswers: {right, all},
                                          });
                                          setResult.setRecord(totalPoints);
-                                         setInProp(inProp => !inProp);
+                                         isEnd = true;
+                                         setInProp(false);
                                      }}
                         />
                     </CSSTransition>
